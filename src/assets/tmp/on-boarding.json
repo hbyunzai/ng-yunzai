@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../node_modules/@yelon/abc/onboarding/schema.json",
+  "maskClosable": false,
+  "items": [
+    {
+      "selectors": ".yunzai-default__nav li .yunzai-default__nav-item",
+      "title": "Click here to switch to shrink main menu",
+      "lightStyle": "background-color: rgba(255, 255, 255, 0.2)"
+    },
+    {
+      "selectors": ".yunzai-default__search",
+      "title": "You can search for people, file, photos...",
+      "lightStyle": "background-color: rgba(255, 255, 255, 0.2)"
+    },
+    {
+      "selectors": ".setting-drawer__handle",
+      "title": "You can customize your theme",
+      "lightStyle": "background-color: rgba(255, 255, 255, 0.2)"
+    }
+  ]
+}

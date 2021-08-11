@@ -1,0 +1,14 @@
+{
+    "$schema": "./node_modules/ng-yunzai/schema.json",
+    "theme": {
+      "list": [
+        {
+          "theme": "dark"
+        },
+        {
+          "theme": "compact"
+        }
+      ]
+    }
+  }
+  
