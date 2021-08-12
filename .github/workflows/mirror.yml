@@ -10,5 +10,5 @@ jobs:
       - uses: actions/checkout@v1
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
-          target_repo_url: git@gitee.com:hbyunzai/yelon.git
+          target_repo_url: git@gitee.com:hbyunzai/ng-yunzai.git
           ssh_private_key: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
