@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { environment } from '@env/environment';
 import { SettingsService, User } from '@yelon/theme';
 import { LayoutDefaultOptions } from '@yelon/theme/layout-default';
-import { environment } from '@env/environment';
 
 @Component({
   selector: 'layout-basic',
@@ -74,7 +74,8 @@ import { environment } from '@env/environment';
         </nz-dropdown-menu>
       </ng-template>
       <ng-template #contentTpl>
-        <router-outlet></router-outlet>
+        <reuse-tab #reuseTab></reuse-tab>
+        <router-outlet (activate)="reuseTab.activate($event)"></router-outlet>
       </ng-template>
     </layout-default>
 

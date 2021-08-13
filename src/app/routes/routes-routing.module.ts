@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from '@env/environment';
 import { SimpleGuard } from '@yelon/auth';
+import { PreloadOptionalModules } from '@yelon/theme';
 
 // layout
 import { LayoutBasicComponent } from '../layout/basic/basic.component';
@@ -40,12 +41,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  providers: [PreloadOptionalModules],
   imports: [
     RouterModule.forRoot(routes, {
       useHash: environment.useHash,
       // NOTICE: If you use `reuse-tab` component and turn on keepingScroll you can set to `disabled`
-      // Pls refer to https://ng-yunzai.com/components/reuse-tab
-      scrollPositionRestoration: 'top'
+      // Pls refer to https://ng.yunzainfo.com/components/reuse-tab
+      scrollPositionRestoration: 'enabled',
+      preloadingStrategy: PreloadOptionalModules
     })
   ],
   exports: [RouterModule]

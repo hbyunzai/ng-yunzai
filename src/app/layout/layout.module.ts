@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GlobalFooterModule } from '@yelon/abc/global-footer';
 import { NoticeIconModule } from '@yelon/abc/notice-icon';
+import { ReuseTabModule } from '@yelon/abc/reuse-tab';
 import { YunzaiThemeModule } from '@yelon/theme';
 import { LayoutDefaultModule } from '@yelon/theme/layout-default';
 import { SettingDrawerModule } from '@yelon/theme/setting-drawer';
@@ -52,6 +53,7 @@ const PASSPORT = [LayoutPassportComponent];
 
 @NgModule({
   imports: [
+    ReuseTabModule,
     CommonModule,
     FormsModule,
     RouterModule,

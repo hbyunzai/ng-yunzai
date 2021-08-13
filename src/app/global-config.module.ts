@@ -37,13 +37,13 @@ const yunzaiProvides = [{ provide: YUNZAI_CONFIG, useValue: yunzaiConfig }];
  *  </section>
  *  ```
  */
-// import { RouteReuseStrategy } from '@angular/router';
-// import { ReuseTabService, ReuseTabStrategy } from '@yelon/abc/reuse-tab';
-// yunzaiProvides.push({
-//   provide: RouteReuseStrategy,
-//   useClass: ReuseTabStrategy,
-//   deps: [ReuseTabService],
-// } as any);
+import { RouteReuseStrategy } from '@angular/router';
+import { ReuseTabService, ReuseTabStrategy } from '@yelon/abc/reuse-tab';
+yunzaiProvides.push({
+  provide: RouteReuseStrategy,
+  useClass: ReuseTabStrategy,
+  deps: [ReuseTabService]
+} as any);
 
 // #endregion
 
