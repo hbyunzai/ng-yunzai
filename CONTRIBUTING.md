@@ -49,7 +49,7 @@ You can file new issues by filling out our [new issue form](https://github.com/h
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-* Search [GitHub](https://github.com/ng-yunzai/ng-yunzai/pulls) for an open or closed PR
+* Search [GitHub](https://github.com/hbyunzai/ng-yunzai/pulls) for an open or closed PR
   that relates to your submission. You don't want to duplicate effort.
 * Make your changes in a new git branch:
 
@@ -149,7 +149,7 @@ to read on GitHub as well as in various git tools.
 
 Footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
 
-Samples: (even more [samples](https://github.com/ng-yunzai/ng-yunzai/commits/master))
+Samples: (even more [samples](https://github.com/hbyunzai/ng-yunzai/commits/master))
 
 ```
 docs(changelog): update change log to beta.5
@@ -197,5 +197,5 @@ reference GitHub issues that this commit **Closes**.
 A detailed explanation can be found in this [document][commit-message-format].
 
 [commit-message-format]: https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#
-[github]: https://github.com/ng-yunzai/ng-yunzai
+[github]: https://github.com/hbyunzai/ng-yunzai
 [plunker]: http://plnkr.co/edit
