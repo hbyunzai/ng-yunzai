@@ -18,6 +18,7 @@ import { enUS as dfEn, zhCN as dfZhCn, zhTW as dfZhTw } from 'date-fns/locale';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
 import { en_US as zorroEnUS, NzI18nService, zh_CN as zorroZhCN, zh_TW as zorroZhTW } from 'ng-zorro-antd/i18n';
 import { Observable } from 'rxjs';
+import { AlainConfigService } from '@delon/util/config';
 
 interface LangConfigData {
   abbr: string;
@@ -69,9 +70,10 @@ export class I18NService extends YunzaiI18nBaseService {
     private settings: SettingsService,
     private nzI18nService: NzI18nService,
     private yelonLocaleService: YelonLocaleService,
-    private platform: Platform
+    private platform: Platform,
+    cogSrv: AlainConfigService
   ) {
-    super();
+    super(cogSrv);
 
     const defaultLang = this.getDefaultLang();
     if (this._langs.findIndex(w => w.code === defaultLang)) {
