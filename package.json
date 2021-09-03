@@ -39,6 +39,7 @@
     "@yelon/mock": "^12.0.4",
     "@yelon/theme": "^12.0.4",
     "@yelon/util": "^12.0.4",
+    "@yelon/bis":"^12.0.4",
     "ajv": "^8.6.2",
     "ng-zorro-antd": "^12.0.1",
     "ngx-tinymce": "^12.0.0",
