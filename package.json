@@ -82,7 +82,7 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "lint-staged": "^11.1.2",
     "ng-yunzai": "^12.0.5",
-    "ng-yunzai-plugin-theme": "^12.0.0",
+    "ng-yunzai-plugin-theme": "^12.0.1",
     "ng-yunzai-sts": "^0.0.1",
     "node-fetch": "^2.6.1",
     "prettier": "^2.2.1",
