@@ -50,7 +50,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       useHash: environment.useHash,
       // NOTICE: If you use `reuse-tab` component and turn on keepingScroll you can set to `disabled`
-      // Pls refer to https://ng-yunzai.com/components/reuse-tab
+      // Pls refer to https://ng.yunzainfo.com/components/reuse-tab
       scrollPositionRestoration: 'top',
       preloadingStrategy: PreloadOptionalModules
     })

@@ -1,4 +1,4 @@
-// 请参考：https://ng.yunzai.com/docs/i18n
+// 请参考：https://ng.yunzainfo.com/docs/i18n
 import { Platform } from '@angular/cdk/platform';
 import { registerLocaleData } from '@angular/common';
 import ngEn from '@angular/common/locales/en';

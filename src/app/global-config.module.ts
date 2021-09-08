@@ -8,7 +8,7 @@ import { throwIfAlreadyLoaded } from '@core';
 
 import { environment } from '@env/environment';
 
-// Please refer to: https://ng.yunzai.com/docs/global-config
+// Please refer to: https://ng.yunzainfo.com/docs/global-config
 // #region NG-YUNZAI Config
 
 const yunzaiConfig: YunzaiConfig = {
@@ -26,7 +26,7 @@ const yunzaiProvides = [{ provide: YUNZAI_CONFIG, useValue: yunzaiConfig }];
 
 // #region reuse-tab
 /**
- * 若需要[路由复用](https://ng.yunzai.com/components/reuse-tab)需要：
+ * 若需要[路由复用](https://ng.yunzainfo.com/components/reuse-tab)需要：
  * 1、在 `shared-yelon.module.ts` 导入 `ReuseTabModule` 模块
  * 2、注册 `RouteReuseStrategy`
  * 3、在 `src/app/layout/default/default.component.html` 修改：
