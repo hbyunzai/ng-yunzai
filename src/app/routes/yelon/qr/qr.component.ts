@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './qr.component.html'
 })
 export class QRComponent {
-  value = 'https://ng-yunzai.com/';
+  value = 'https://ng.yunzai.com/';
   background = '#ffffff';
   backgroundAlpha = 1.0;
   foreground = '#000000';

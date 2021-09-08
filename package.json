@@ -1,6 +1,6 @@
 {
   "name": "ng-yunzai",
-  "version": "12.0.5",
+  "version": "12.0.6",
   "scripts": {
     "ng-high-memory": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng",
     "ng": "ng",

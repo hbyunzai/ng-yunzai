@@ -214,7 +214,7 @@ export class DefaultInterceptor implements HttpInterceptor {
       default:
         if (ev instanceof HttpErrorResponse) {
           console.warn(
-            '未可知错误，大部分是由于后端不支持跨域CORS或无效配置引起，请参考 https://ng-yunzai.com/docs/server 解决跨域问题',
+            '未可知错误，大部分是由于后端不支持跨域CORS或无效配置引起，请参考 https://ng.yunzai.com/docs/server 解决跨域问题',
             ev
           );
         }
