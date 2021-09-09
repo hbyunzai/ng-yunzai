@@ -11,7 +11,7 @@ import { NZ_DATE_LOCALE, NZ_I18N, zh_CN as zorroLang } from 'ng-zorro-antd/i18n'
 import { NzNotificationModule } from 'ng-zorro-antd/notification';
 
 // #region default language
-// 参考：https://ng.yunzai.com/docs/i18n
+// 参考：https://ng.yunzainfo.com/docs/i18n
 import { I18NService } from '@core';
 import { zhCN as dateLang } from 'date-fns/locale';
 

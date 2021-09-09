@@ -12,7 +12,7 @@ export class ZipComponent implements OnInit {
   list: any;
   instance: JSZip | null = null;
   data: Array<{ path?: string; url?: string }> = [
-    { path: 'demo.docx', url: 'https://ng.yunzai.com/assets/demo.docx' },
+    { path: 'demo.docx', url: 'https://ng.yunzainfo.com/assets/demo.docx' },
     {
       path: '小程序标志.zip',
       url: 'https://wximg.gtimg.com/shake_tv/mina/standard_logo.zip'
