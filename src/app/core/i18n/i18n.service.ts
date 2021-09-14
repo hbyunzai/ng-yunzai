@@ -71,7 +71,7 @@ export class I18NService extends YunzaiI18nBaseService {
     private nzI18nService: NzI18nService,
     private yelonLocaleService: YelonLocaleService,
     private platform: Platform,
-    private cogSrv: YunzaiConfigService
+    cogSrv: YunzaiConfigService
   ) {
     super(cogSrv);
 
@@ -88,7 +88,9 @@ export class I18NService extends YunzaiI18nBaseService {
     if (this.settings.layout.lang) {
       return this.settings.layout.lang;
     }
-    return (navigator.languages ? navigator.languages[0] : null) || navigator.language;
+    let res = (navigator.languages ? navigator.languages[0] : null) || navigator.language;
+    const arr = res.split('-');
+    return arr.length <= 1 ? res : `${arr[0]}-${arr[1].toUpperCase()}`;
   }
 
   loadLangData(lang: string): Observable<NzSafeAny> {
