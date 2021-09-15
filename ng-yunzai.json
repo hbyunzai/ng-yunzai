@@ -1,14 +1,94 @@
 {
-    "$schema": "./node_modules/ng-yunzai/schema.json",
-    "theme": {
-      "list": [
-        {
-          "theme": "dark"
-        },
-        {
-          "theme": "compact"
+  "$schema": "./node_modules/ng-yunzai/schema.json",
+  "theme": {
+    "list": [
+      {
+        "theme": "dark"
+      },
+      {
+        "theme": "compact"
+      },
+      {
+        "theme": "dust",
+        "modifyVars": {
+          "@primary-color": "#F5222D",
+          "@yunzai-default-header-bg": "#F5222D",
+          "@yunzai-default-aside-nav-text-hover-color": "#F5222D",
+          "@yunzai-default-aside-nav-selected-text-color": "#F5222D"
         }
-      ]
-    }
+      },
+      {
+        "theme": "volcano",
+        "modifyVars": {
+          "@primary-color": "#FA541C",
+          "@yunzai-default-header-bg": "#FA541C",
+          "@yunzai-default-aside-nav-text-hover-color": "#FA541C",
+          "@yunzai-default-aside-nav-selected-text-color": "#FA541C"
+        }
+      },
+      {
+        "theme": "sunset",
+        "modifyVars": {
+          "@primary-color": "#FAAD14",
+          "@yunzai-default-header-bg": "#FAAD14",
+          "@yunzai-default-aside-nav-text-hover-color": "#FAAD14",
+          "@yunzai-default-aside-nav-selected-text-color": "#FAAD14"
+        }
+      },
+      {
+        "theme": "cyan",
+        "modifyVars": {
+          "@primary-color": "#13C2C2",
+          "@yunzai-default-header-bg": "#13C2C2",
+          "@yunzai-default-aside-nav-text-hover-color": "#13C2C2",
+          "@yunzai-default-aside-nav-selected-text-color": "#13C2C2"
+        }
+      },
+      {
+        "theme": "green",
+        "modifyVars": {
+          "@primary-color": "#52C41A",
+          "@yunzai-default-header-bg": "#52C41A",
+          "@yunzai-default-aside-nav-text-hover-color": "#52C41A",
+          "@yunzai-default-aside-nav-selected-text-color": "#52C41A"
+        }
+      },
+      {
+        "theme": "daybreak",
+        "modifyVars": {
+          "@primary-color": "#1890ff",
+          "@yunzai-default-header-bg": "#1890ff",
+          "@yunzai-default-aside-nav-text-hover-color": "#1890ff",
+          "@yunzai-default-aside-nav-selected-text-color": "#1890ff"
+        }
+      },
+      {
+        "theme": "geekblue",
+        "modifyVars": {
+          "@primary-color": "#2F54EB",
+          "@yunzai-default-header-bg": "#2F54EB",
+          "@yunzai-default-aside-nav-text-hover-color": "#2F54EB",
+          "@yunzai-default-aside-nav-selected-text-color": "#2F54EB"
+        }
+      },
+      {
+        "theme": "purple",
+        "modifyVars": {
+          "@primary-color": "#722ED1",
+          "@yunzai-default-header-bg": "#722ED1",
+          "@yunzai-default-aside-nav-text-hover-color": "#722ED1",
+          "@yunzai-default-aside-nav-selected-text-color": "#722ED1"
+        }
+      },
+      {
+        "theme": "black",
+        "modifyVars": {
+          "@primary-color": "#001529",
+          "@yunzai-default-header-bg": "#001529",
+          "@yunzai-default-aside-nav-text-hover-color": "#001529",
+          "@yunzai-default-aside-nav-selected-text-color": "#001529"
+        }
+      }
+    ]
   }
-  
+}
