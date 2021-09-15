@@ -148,5 +148,17 @@
   "validation.title.required": "请输入标题",
   "validation.date.required": "请选择起止日期",
   "validation.goal.required": "请输入目标描述",
-  "validation.standard.required": "请输入衡量标准"
+  "validation.standard.required": "请输入衡量标准",
+  "theme.default": "默认",
+  "theme.compact": "压缩",
+  "theme.dark": "暗黑",
+  "theme.yuhong":"玉红",
+  "theme.danjuhuang": "淡橘黄",
+  "theme.xinghuang": "杏黄",
+  "theme.shilv": "石绿",
+  "theme.zhulv": "竹绿",
+  "theme.youlan": "釉蓝",
+  "theme.dianqing": "靛青",
+  "theme.shangengzi": "山梗紫",
+  "theme.shuiniuhui": "水牛灰"
 }

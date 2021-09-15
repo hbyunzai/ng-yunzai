@@ -9,84 +9,84 @@
         "theme": "compact"
       },
       {
-        "theme": "dust",
+        "theme": "yuhong",
         "modifyVars": {
-          "@primary-color": "#F5222D",
-          "@yunzai-default-header-bg": "#F5222D",
-          "@yunzai-default-aside-nav-text-hover-color": "#F5222D",
-          "@yunzai-default-aside-nav-selected-text-color": "#F5222D"
+          "@primary-color": "#C04851",
+          "@yunzai-default-header-bg": "#C04851",
+          "@yunzai-default-aside-nav-text-hover-color": "#C04851",
+          "@yunzai-default-aside-nav-selected-text-color": "#C04851"
         }
       },
       {
-        "theme": "volcano",
+        "theme": "danjuhuang",
         "modifyVars": {
-          "@primary-color": "#FA541C",
-          "@yunzai-default-header-bg": "#FA541C",
-          "@yunzai-default-aside-nav-text-hover-color": "#FA541C",
-          "@yunzai-default-aside-nav-selected-text-color": "#FA541C"
+          "@primary-color": "#FBA414",
+          "@yunzai-default-header-bg": "#FBA414",
+          "@yunzai-default-aside-nav-text-hover-color": "#FBA414",
+          "@yunzai-default-aside-nav-selected-text-color": "#FBA414"
         }
       },
       {
-        "theme": "sunset",
+        "theme": "xinghuang",
         "modifyVars": {
-          "@primary-color": "#FAAD14",
-          "@yunzai-default-header-bg": "#FAAD14",
-          "@yunzai-default-aside-nav-text-hover-color": "#FAAD14",
-          "@yunzai-default-aside-nav-selected-text-color": "#FAAD14"
+          "@primary-color": "#F28E16",
+          "@yunzai-default-header-bg": "#F28E16",
+          "@yunzai-default-aside-nav-text-hover-color": "#F28E16",
+          "@yunzai-default-aside-nav-selected-text-color": "#F28E16"
         }
       },
       {
-        "theme": "cyan",
+        "theme": "shilv",
         "modifyVars": {
-          "@primary-color": "#13C2C2",
-          "@yunzai-default-header-bg": "#13C2C2",
-          "@yunzai-default-aside-nav-text-hover-color": "#13C2C2",
-          "@yunzai-default-aside-nav-selected-text-color": "#13C2C2"
+          "@primary-color": "#57C3C2",
+          "@yunzai-default-header-bg": "#57C3C2",
+          "@yunzai-default-aside-nav-text-hover-color": "#57C3C2",
+          "@yunzai-default-aside-nav-selected-text-color": "#57C3C2"
         }
       },
       {
-        "theme": "green",
+        "theme": "zhulv",
         "modifyVars": {
-          "@primary-color": "#52C41A",
-          "@yunzai-default-header-bg": "#52C41A",
-          "@yunzai-default-aside-nav-text-hover-color": "#52C41A",
-          "@yunzai-default-aside-nav-selected-text-color": "#52C41A"
+          "@primary-color": "#1BA784",
+          "@yunzai-default-header-bg": "#1BA784",
+          "@yunzai-default-aside-nav-text-hover-color": "#1BA784",
+          "@yunzai-default-aside-nav-selected-text-color": "#1BA784"
         }
       },
       {
-        "theme": "daybreak",
+        "theme": "youlan",
         "modifyVars": {
-          "@primary-color": "#1890ff",
-          "@yunzai-default-header-bg": "#1890ff",
-          "@yunzai-default-aside-nav-text-hover-color": "#1890ff",
-          "@yunzai-default-aside-nav-selected-text-color": "#1890ff"
+          "@primary-color": "#1781B5",
+          "@yunzai-default-header-bg": "#1781B5",
+          "@yunzai-default-aside-nav-text-hover-color": "#1781B5",
+          "@yunzai-default-aside-nav-selected-text-color": "#1781B5"
         }
       },
       {
-        "theme": "geekblue",
+        "theme": "dianqing",
         "modifyVars": {
-          "@primary-color": "#2F54EB",
-          "@yunzai-default-header-bg": "#2F54EB",
-          "@yunzai-default-aside-nav-text-hover-color": "#2F54EB",
-          "@yunzai-default-aside-nav-selected-text-color": "#2F54EB"
+          "@primary-color": "#1661AB",
+          "@yunzai-default-header-bg": "#1661AB",
+          "@yunzai-default-aside-nav-text-hover-color": "#1661AB",
+          "@yunzai-default-aside-nav-selected-text-color": "#1661AB"
         }
       },
       {
-        "theme": "purple",
+        "theme": "shangengzi",
         "modifyVars": {
-          "@primary-color": "#722ED1",
-          "@yunzai-default-header-bg": "#722ED1",
-          "@yunzai-default-aside-nav-text-hover-color": "#722ED1",
-          "@yunzai-default-aside-nav-selected-text-color": "#722ED1"
+          "@primary-color": "#61649F",
+          "@yunzai-default-header-bg": "#61649F",
+          "@yunzai-default-aside-nav-text-hover-color": "#61649F",
+          "@yunzai-default-aside-nav-selected-text-color": "#61649F"
         }
       },
       {
-        "theme": "black",
+        "theme": "shuiniuhui",
         "modifyVars": {
-          "@primary-color": "#001529",
-          "@yunzai-default-header-bg": "#001529",
-          "@yunzai-default-aside-nav-text-hover-color": "#001529",
-          "@yunzai-default-aside-nav-selected-text-color": "#001529"
+          "@primary-color": "#2F2F35",
+          "@yunzai-default-header-bg": "#2F2F35",
+          "@yunzai-default-aside-nav-text-hover-color": "#2F2F35",
+          "@yunzai-default-aside-nav-selected-text-color": "#2F2F35"
         }
       }
     ]
