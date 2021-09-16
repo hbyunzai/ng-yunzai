@@ -14,7 +14,21 @@
           "@primary-color": "#C04851",
           "@yunzai-default-header-bg": "#C04851",
           "@yunzai-default-aside-nav-text-hover-color": "#C04851",
-          "@yunzai-default-aside-nav-selected-text-color": "#C04851"
+          "@yunzai-default-aside-nav-selected-text-color": "#C04851",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#B54049",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#C04851",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#C04851",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#C04851"
         }
       },
       {
@@ -23,7 +37,21 @@
           "@primary-color": "#FBA414",
           "@yunzai-default-header-bg": "#FBA414",
           "@yunzai-default-aside-nav-text-hover-color": "#FBA414",
-          "@yunzai-default-aside-nav-selected-text-color": "#FBA414"
+          "@yunzai-default-aside-nav-selected-text-color": "#FBA414",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#F39F16",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#FBA414",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#FBA414",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#FBA414"
         }
       },
       {
@@ -32,7 +60,21 @@
           "@primary-color": "#F28E16",
           "@yunzai-default-header-bg": "#F28E16",
           "@yunzai-default-aside-nav-text-hover-color": "#F28E16",
-          "@yunzai-default-aside-nav-selected-text-color": "#F28E16"
+          "@yunzai-default-aside-nav-selected-text-color": "#F28E16",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#FF9616",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#F28E16",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#F28E16",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#F28E16"
         }
       },
       {
@@ -41,7 +83,21 @@
           "@primary-color": "#57C3C2",
           "@yunzai-default-header-bg": "#57C3C2",
           "@yunzai-default-aside-nav-text-hover-color": "#57C3C2",
-          "@yunzai-default-aside-nav-selected-text-color": "#57C3C2"
+          "@yunzai-default-aside-nav-selected-text-color": "#57C3C2",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#58CEC2",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#57C3C2",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#57C3C2",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#57C3C2"
         }
       },
       {
@@ -50,7 +106,21 @@
           "@primary-color": "#1BA784",
           "@yunzai-default-header-bg": "#1BA784",
           "@yunzai-default-aside-nav-text-hover-color": "#1BA784",
-          "@yunzai-default-aside-nav-selected-text-color": "#1BA784"
+          "@yunzai-default-aside-nav-selected-text-color": "#1BA784",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#21b384",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#1BA784",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#1BA784",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#1BA784"
         }
       },
       {
@@ -59,7 +129,21 @@
           "@primary-color": "#1781B5",
           "@yunzai-default-header-bg": "#1781B5",
           "@yunzai-default-aside-nav-text-hover-color": "#1781B5",
-          "@yunzai-default-aside-nav-selected-text-color": "#1781B5"
+          "@yunzai-default-aside-nav-selected-text-color": "#1781B5",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#1887b5",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#1781B5",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#1781B5",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#1781B5"
         }
       },
       {
@@ -68,7 +152,21 @@
           "@primary-color": "#1661AB",
           "@yunzai-default-header-bg": "#1661AB",
           "@yunzai-default-aside-nav-text-hover-color": "#1661AB",
-          "@yunzai-default-aside-nav-selected-text-color": "#1661AB"
+          "@yunzai-default-aside-nav-selected-text-color": "#1661AB",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#1869AB",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#1661AB",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#1661AB",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#1661AB"
         }
       },
       {
@@ -77,7 +175,21 @@
           "@primary-color": "#61649F",
           "@yunzai-default-header-bg": "#61649F",
           "@yunzai-default-aside-nav-text-hover-color": "#61649F",
-          "@yunzai-default-aside-nav-selected-text-color": "#61649F"
+          "@yunzai-default-aside-nav-selected-text-color": "#61649F",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#6a6d9f",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#61649F",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#61649F",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#61649F"
         }
       },
       {
@@ -86,7 +198,21 @@
           "@primary-color": "#2F2F35",
           "@yunzai-default-header-bg": "#2F2F35",
           "@yunzai-default-aside-nav-text-hover-color": "#2F2F35",
-          "@yunzai-default-aside-nav-selected-text-color": "#2F2F35"
+          "@yunzai-default-aside-nav-selected-text-color": "#2F2F35",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#343435",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#2F2F35",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#2F2F35",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#2F2F35"
         }
       }
     ]
