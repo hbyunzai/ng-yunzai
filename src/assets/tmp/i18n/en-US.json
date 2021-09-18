@@ -164,5 +164,6 @@
   "theme.shuiniuhui": "Shui Niuhui",
   "application.button": "Application And Service",
   "application.all": "All Applications",
-  "application.mine": "My Applications"
+  "application.mine": "My Applications",
+  "menu.backtohome":"home"
 }

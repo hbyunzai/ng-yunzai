@@ -163,5 +163,6 @@
   "theme.shuiniuhui": "水牛灰",
   "application.button": "应用与服务",
   "application.all": "全部应用",
-  "application.mine": "我的应用"
+  "application.mine": "我的应用",
+  "menu.backtohome": "回到首页"
 }
