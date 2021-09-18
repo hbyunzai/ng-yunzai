@@ -164,5 +164,6 @@
   "application.button": "应用与服务",
   "application.all": "全部应用",
   "application.mine": "我的应用",
+  "application.search": "请输入要搜索的应用名称!",
   "menu.backtohome": "回到首页"
 }

@@ -165,5 +165,6 @@
   "application.button": "Application And Service",
   "application.all": "All Applications",
   "application.mine": "My Applications",
+  "application.search": "Please in put the application name that you want to search!",
   "menu.backtohome":"home"
 }
