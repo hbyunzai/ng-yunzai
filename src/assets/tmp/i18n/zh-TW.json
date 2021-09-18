@@ -148,5 +148,22 @@
   "validation.title.required": "請輸入標題",
   "validation.date.required": "請選擇起止日期",
   "validation.goal.required": "請輸入目標描述",
-  "validation.standard.required": "請輸入衡量標淮"
+  "validation.standard.required": "請輸入衡量標淮",
+  "theme.default": "默认",
+  "theme.compact": "压缩",
+  "theme.dark": "暗黑",
+  "theme.yuhong":"玉红",
+  "theme.danjuhuang": "淡橘黄",
+  "theme.xinghuang": "杏黄",
+  "theme.shilv": "石绿",
+  "theme.zhulv": "竹绿",
+  "theme.youlan": "釉蓝",
+  "theme.dianqing": "靛青",
+  "theme.shangengzi": "山梗紫",
+  "theme.shuiniuhui": "水牛灰",
+  "application.button": "应用与服务",
+  "application.all": "全部应用",
+  "application.mine": "我的应用",
+  "application.search": "请输入要搜索的应用名称!",
+  "menu.backtohome": "回到首页"
 }
