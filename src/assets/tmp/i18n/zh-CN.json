@@ -160,5 +160,8 @@
   "theme.youlan": "釉蓝",
   "theme.dianqing": "靛青",
   "theme.shangengzi": "山梗紫",
-  "theme.shuiniuhui": "水牛灰"
+  "theme.shuiniuhui": "水牛灰",
+  "application.button": "应用与服务",
+  "application.all": "全部应用",
+  "application.mine": "我的应用"
 }

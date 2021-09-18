@@ -161,5 +161,8 @@
   "theme.youlan": "You Lan",
   "theme.dianqing": "Dian Qing",
   "theme.shangengzi": "Shan Gengzi",
-  "theme.shuiniuhui": "Shui Niuhui"
+  "theme.shuiniuhui": "Shui Niuhui",
+  "application.button": "Application And Service",
+  "application.all": "All Applications",
+  "application.mine": "My Applications"
 }
