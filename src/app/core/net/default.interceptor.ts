@@ -124,7 +124,7 @@ export class DefaultInterceptor implements HttpInterceptor {
   /**
    * 重新附加新 Token 信息
    *
-   * > 由于已经发起的请求，不会再走一遍 `@delon/auth` 因此需要结合业务情况重新附加新的 Token
+   * > 由于已经发起的请求，不会再走一遍 `@yelon/auth` 因此需要结合业务情况重新附加新的 Token
    */
   private reAttachToken(req: HttpRequest<any>): HttpRequest<any> {
     // 以下示例是以 NG-YUNZAI 默认使用 `SimpleInterceptor`
@@ -138,7 +138,7 @@ export class DefaultInterceptor implements HttpInterceptor {
 
   // #endregion
 
-  // #region 刷新Token方式二：使用 `@delon/auth` 的 `refresh` 接口
+  // #region 刷新Token方式二：使用 `@yelon/auth` 的 `refresh` 接口
 
   private buildAuthRefresh(): void {
     if (!this.refreshTokenEnabled) {
