@@ -9,9 +9,9 @@ import {
 } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '@env/environment';
 import { YA_SERVICE_TOKEN, ITokenService } from '@yelon/auth';
 import { YUNZAI_I18N_TOKEN, _HttpClient } from '@yelon/theme';
-import { environment } from '@env/environment';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { BehaviorSubject, Observable, of, throwError } from 'rxjs';
 import { catchError, filter, mergeMap, switchMap, take } from 'rxjs/operators';
@@ -168,7 +168,7 @@ export class DefaultInterceptor implements HttpInterceptor {
 
   private toLogin(): void {
     this.notification.error(`未登录或登录已过期，请重新登录。`, ``);
-    this.goTo('/passport/login');
+    this.goTo(this.tokenSrv.login_url!);
   }
 
   private handleData(ev: HttpResponseBase, req: HttpRequest<any>, next: HttpHandler): Observable<any> {
