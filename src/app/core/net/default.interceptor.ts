@@ -127,7 +127,7 @@ export class DefaultInterceptor implements HttpInterceptor {
    * > 由于已经发起的请求，不会再走一遍 `@delon/auth` 因此需要结合业务情况重新附加新的 Token
    */
   private reAttachToken(req: HttpRequest<any>): HttpRequest<any> {
-    // 以下示例是以 NG-ALAIN 默认使用 `SimpleInterceptor`
+    // 以下示例是以 NG-YUNZAI 默认使用 `SimpleInterceptor`
     const token = this.tokenSrv.get()?.token;
     return req.clone({
       setHeaders: {
@@ -214,7 +214,7 @@ export class DefaultInterceptor implements HttpInterceptor {
       default:
         if (ev instanceof HttpErrorResponse) {
           console.warn(
-            '未可知错误，大部分是由于后端不支持跨域CORS或无效配置引起，请参考 https://ng-alain.com/docs/server 解决跨域问题',
+            '未可知错误，大部分是由于后端不支持跨域CORS或无效配置引起，请参考 https://ng.yunzainfo.com/docs/server 解决跨域问题',
             ev
           );
         }
