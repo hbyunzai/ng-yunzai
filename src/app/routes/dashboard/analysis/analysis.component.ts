@@ -1,10 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
 import { I18NService } from '@core';
+import { yuan } from '@shared';
 import { STColumn } from '@yelon/abc/st';
-import { _HttpClient } from '@yelon/theme';
+import { YUNZAI_I18N_TOKEN, _HttpClient } from '@yelon/theme';
 import { getTimeDistance } from '@yelon/util/date-time';
 import { deepCopy } from '@yelon/util/other';
-import { yuan } from '@shared';
+import type { NzSafeAny } from 'ng-zorro-antd/core/types';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
@@ -14,10 +15,17 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DashboardAnalysisComponent implements OnInit {
-  constructor(private http: _HttpClient, public msg: NzMessageService, private i18n: I18NService, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private http: _HttpClient,
+    public msg: NzMessageService,
+    @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService,
+    private cdr: ChangeDetectorRef
+  ) {}
   data: any = {};
   loading = true;
-  date_range: Date[] = [];
+  dateRange: Date[] = [];
+  dateRangeTypes = ['today', 'week', 'month', 'year'];
+  dateRangeType = this.dateRangeTypes[0];
   rankingListData: Array<{ title: string; total: number }> = Array(7)
     .fill({})
     .map((_, i) => {
@@ -76,10 +84,12 @@ export class DashboardAnalysisComponent implements OnInit {
     });
   }
 
-  setDate(type: 'today' | 'week' | 'month' | 'year'): void {
-    this.date_range = getTimeDistance(type);
+  setDate(type: string): void {
+    this.dateRange = getTimeDistance(type as NzSafeAny);
+    this.dateRangeType = type;
     setTimeout(() => this.cdr.detectChanges());
   }
+
   changeSaleType(): void {
     this.salesPieData =
       this.salesType === 'all'
