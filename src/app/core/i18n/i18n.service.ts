@@ -74,11 +74,8 @@ export class I18NService extends YunzaiI18nBaseService {
     cogSrv: YunzaiConfigService
   ) {
     super(cogSrv);
-
     const defaultLang = this.getDefaultLang();
-    if (this._langs.findIndex(w => w.code === defaultLang)) {
-      this._defaultLang = defaultLang;
-    }
+    this._defaultLang = this._langs.findIndex(w => w.code === defaultLang) === -1 ? DEFAULT : defaultLang;
   }
 
   private getDefaultLang(): string {
