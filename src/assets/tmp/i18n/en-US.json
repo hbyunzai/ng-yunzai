@@ -1,9 +1,4 @@
 {
-  "application":{
-    "button":"Application And Service",
-    "all":"All Applications",
-    "mine":"Mine Applications",
-  },
   "menu.search.placeholder": "Search for people, file, photos...",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",
@@ -134,16 +129,14 @@
   "app.register.get-verification-code": "Get code",
   "app.register.sign-in": "Already have an account?",
   "app.register-result.msg": "Account：registered at {{email}}",
-  "app.register-result.activation-email":
-    "The activation email has been sent to your email address and is valid for 24 hours. Please log in to the email in time and click on the link in the email to activate the account.",
+  "app.register-result.activation-email": "The activation email has been sent to your email address and is valid for 24 hours. Please log in to the email in time and click on the link in the email to activate the account.",
   "app.register-result.back-home": "Back to home",
   "app.register-result.view-mailbox": "View mailbox",
   "validation.email.required": "Please enter your email!",
   "validation.email.wrong-format": "The email address is in the wrong format!",
   "validation.password.required": "Please enter your password!",
   "validation.password.twice": "The passwords entered twice do not match!",
-  "validation.password.strength.msg":
-    "Please enter at least 6 characters and don't use passwords that are easy to guess.",
+  "validation.password.strength.msg": "Please enter at least 6 characters and don't use passwords that are easy to guess.",
   "validation.password.strength.strong": "Strength: strong",
   "validation.password.strength.medium": "Strength: medium",
   "validation.password.strength.short": "Strength: too short",
@@ -155,21 +148,25 @@
   "validation.date.required": "Please select the start and end date",
   "validation.goal.required": "Please enter a description of the goal",
   "validation.standard.required": "Please enter a metric",
-  "theme.default": "Default",
-  "theme.compact": "Compact",
-  "theme.dark": "Dark",
-  "theme.yuhong":"Yu Hong",
-  "theme.danjuhuang": "Dan Juhuang",
-  "theme.xinghuang": "Xing Huang",
-  "theme.shilv": "Shi Lv",
-  "theme.zhulv": "Zhu Lv",
-  "theme.youlan": "You Lan",
-  "theme.dianqing": "Dian Qing",
-  "theme.shangengzi": "Shan Gengzi",
-  "theme.shuiniuhui": "Shui Niuhui",
-  "application.button": "Application And Service",
-  "application.all": "All Applications",
-  "application.mine": "My Applications",
-  "application.search": "Please in put the application name that you want to search!",
-  "menu.backtohome":"home"
+  "theme": {
+    "default": "Default",
+    "compact": "Compact",
+    "dark": "Dark",
+    "yuhong": "Yu Hong",
+    "danjuhuang": "Dan Juhuang",
+    "xinghuang": "Xing Huang",
+    "shilv": "Shi Lv",
+    "zhulv": "Zhu Lv",
+    "youlan": "You Lan",
+    "dianqing": "Dian Qing",
+    "shangengzi": "Shan Gengzi",
+    "shuiniuhui": "Shui Niuhui"
+  },
+  "application": {
+    "button": "Application And Service",
+    "all": "All Applications",
+    "mine": "My Applications",
+    "search": "Please in put the application name that you want to search!"
+  },
+  "menu.backtohome": "home"
 }
