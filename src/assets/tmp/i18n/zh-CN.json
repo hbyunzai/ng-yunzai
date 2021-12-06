@@ -18,7 +18,8 @@
   "application": {
     "button": "应用与服务",
     "all": "全部应用",
-    "mine": "我的应用"
+    "mine": "我的应用",
+"search":"请输入搜索内容"
   },
   "menu": {
     "dashboard": {
