@@ -1,4 +1,9 @@
 {
+  "notify": {
+    "message": "消息",
+    "notice": "通知",
+    "todo": "待办"
+  },
   "application": {
     "button": "应用与服务",
     "all": "全部应用",
@@ -24,8 +29,8 @@
     "zhulv": "竹绿",
     "youlan": "釉蓝",
     "dianqing": "靛青",
-    "shangengzi":"山梗紫",
-    "shuiniuhui":"水牛灰"
+    "shangengzi": "山梗紫",
+    "shuiniuhui": "水牛灰"
   },
   "menu.backtohome": "主页",
   "menu.search.placeholder": "搜索：员工、文件、照片等",

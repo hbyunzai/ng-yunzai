@@ -168,5 +168,10 @@
     "mine": "My Applications",
     "search": "Please in put the application name that you want to search!"
   },
-  "menu.backtohome": "home"
+  "menu.backtohome": "home",
+  "notify": {
+    "message": "message",
+    "notice": "notice",
+    "todo": "todo"
+  }
 }
