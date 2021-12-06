@@ -1,4 +1,9 @@
 {
+  "application":{
+    "button":"应用与服务",
+    "all":"全部应用",
+    "mine":"我的应用"
+  },
   "menu": {
     "dashboard": {
       "": "仪表盘",

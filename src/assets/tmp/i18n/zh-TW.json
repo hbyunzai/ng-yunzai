@@ -1,4 +1,9 @@
 {
+  "application":{
+    "button":"应用与服务",
+    "all":"全部应用",
+    "mine":"我的应用"
+  },
   "menu.search.placeholder": "搜索：員工、文件、照片等",
   "menu.fullscreen": "全屏",
   "menu.fullscreen.exit": "退出全屏",

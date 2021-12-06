@@ -1,4 +1,9 @@
 {
+  "application":{
+    "button":"Application And Service",
+    "all":"All Applications",
+    "mine":"Mine Applications",
+  },
   "menu.search.placeholder": "Search for people, file, photos...",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",
