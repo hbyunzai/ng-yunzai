@@ -170,8 +170,19 @@
   },
   "menu.backtohome": "home",
   "notify": {
+    "clear": "clean",
     "message": "message",
+    "message.clearText": "clean all message",
+    "message.emptyText": "no message",
+    "todo": "todo",
+    "todo.clearText": "reload todo list",
+    "todo.emptyText": "no todo",
     "notice": "notice",
-    "todo": "todo"
+    "notice.emptyText": "no notice",
+    "unread": "unread",
+    "readed": "readed",
+    "unstart": "unstart",
+    "started": "started",
+    "nostatus": "no status"
   }
 }

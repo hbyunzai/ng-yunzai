@@ -1,8 +1,19 @@
 {
   "notify": {
+    "clear": "清除",
     "message": "消息",
+    "message.clearText": "清除所有消息",
+    "message.emptyText": "没有新的消息",
+    "todo": "待办",
+    "todo.clearText": "重新加载待办",
+    "todo.emptyText": "没有新的待办",
     "notice": "通知",
-    "todo": "待办"
+    "notice.emptyText": "没有新的通知",
+    "unread": "未读",
+    "readed": "已读",
+    "unstart": "未开始",
+    "started": "已开始",
+    "nostatus": "无状态"
   },
   "application": {
     "button": "应用与服务",
