@@ -42,6 +42,7 @@
     "@yelon/mock": "^13.0.0-beta.1",
     "@yelon/theme": "^13.0.0-beta.1",
     "@yelon/util": "^13.0.0-beta.1",
+    "@yelon/bis": "^13.0.0-beta.1",
     "ngx-tinymce": "^13.0.0",
     "ngx-ueditor": "^13.0.0",
     "screenfull": "^6.0.0",
