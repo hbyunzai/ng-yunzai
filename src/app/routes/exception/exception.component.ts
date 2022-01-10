@@ -9,7 +9,7 @@ import { ExceptionType } from '@yelon/abc/exception';
 })
 export class ExceptionComponent {
   get type(): ExceptionType {
-    return this.route.snapshot.data.type;
+    return this.route.snapshot.data['type'];
   }
 
   constructor(private route: ActivatedRoute) {}
