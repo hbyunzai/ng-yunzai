@@ -1,1 +1,1 @@
-[Document](https://ng.yunzainfo.com/theme/default)
+[Document](https://ng.yunzainfo.com/theme/layout-default)
