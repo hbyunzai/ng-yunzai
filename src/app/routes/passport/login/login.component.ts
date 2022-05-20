@@ -2,10 +2,10 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestro
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StartupService } from '@core';
+import { environment } from '@env/environment';
 import { ReuseTabService } from '@yelon/abc/reuse-tab';
 import { YA_SERVICE_TOKEN, ITokenService, SocialOpenType, SocialService } from '@yelon/auth';
 import { SettingsService, _HttpClient } from '@yelon/theme';
-import { environment } from '@env/environment';
 import { NzTabChangeEvent } from 'ng-zorro-antd/tabs';
 import { finalize } from 'rxjs/operators';
 
@@ -118,7 +118,7 @@ export class UserLoginComponent implements OnDestroy {
       })
       .pipe(
         finalize(() => {
-          this.loading = true;
+          this.loading = false;
           this.cdr.detectChanges();
         })
       )
