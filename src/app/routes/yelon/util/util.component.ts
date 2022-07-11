@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { yuan } from '@shared';
 import { copy } from '@yelon/util/browser';
 import { format } from '@yelon/util/format';
-import { yuan } from '@shared';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({

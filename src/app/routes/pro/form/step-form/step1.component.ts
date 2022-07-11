@@ -15,7 +15,7 @@ export class Step1Component implements OnInit {
     return this.srv;
   }
 
-  constructor(private fb: FormBuilder, private srv: TransferService) { }
+  constructor(private fb: FormBuilder, private srv: TransferService) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({

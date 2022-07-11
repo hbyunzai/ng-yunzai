@@ -2,7 +2,8 @@ import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject, Input } from '@angular/core';
 import { YUNZAI_I18N_TOKEN, SettingsService } from '@yelon/theme';
 import { BooleanInput, InputBoolean } from '@yelon/util/decorator';
-import {I18NService} from "../../../core";
+
+import { I18NService } from '../../../core';
 
 @Component({
   selector: 'header-i18n',
@@ -40,7 +41,11 @@ export class HeaderI18nComponent {
     return this.settings.layout.lang;
   }
 
-  constructor(private settings: SettingsService, @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService, @Inject(DOCUMENT) private doc: any) {}
+  constructor(
+    private settings: SettingsService,
+    @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService,
+    @Inject(DOCUMENT) private doc: any
+  ) {}
 
   change(lang: string): void {
     const spinEl = this.doc.createElement('div');

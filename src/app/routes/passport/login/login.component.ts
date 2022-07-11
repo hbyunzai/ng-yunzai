@@ -7,7 +7,7 @@ import { ReuseTabService } from '@yelon/abc/reuse-tab';
 import { YA_SERVICE_TOKEN, ITokenService, SocialOpenType, SocialService } from '@yelon/auth';
 import { SettingsService, _HttpClient } from '@yelon/theme';
 import { NzTabChangeEvent } from 'ng-zorro-antd/tabs';
-import { finalize } from 'rxjs/operators';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'passport-login',

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { SharedModule } from '@shared';
 import { CountDownModule } from '@yelon/abc/count-down';
 import { OnboardingModule } from '@yelon/abc/onboarding';
 import { QuickMenuModule } from '@yelon/abc/quick-menu';
@@ -16,7 +17,6 @@ import { G2TagCloudModule } from '@yelon/chart/tag-cloud';
 import { G2TimelineModule } from '@yelon/chart/timeline';
 import { TrendModule } from '@yelon/chart/trend';
 import { G2WaterWaveModule } from '@yelon/chart/water-wave';
-import { SharedModule } from '@shared';
 import { CountdownModule } from 'ngx-countdown';
 
 import { DashboardAnalysisComponent } from './analysis/analysis.component';

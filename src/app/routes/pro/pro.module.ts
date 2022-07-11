@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
+import { SharedModule } from '@shared';
 import { AvatarListModule } from '@yelon/abc/avatar-list';
 import { EllipsisModule } from '@yelon/abc/ellipsis';
 import { FooterToolbarModule } from '@yelon/abc/footer-toolbar';
 import { TagSelectModule } from '@yelon/abc/tag-select';
 import { CurrencyPipeModule } from '@yelon/util/pipes/currency';
-import { SharedModule } from '@shared';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
 

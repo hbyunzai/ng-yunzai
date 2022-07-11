@@ -1,7 +1,7 @@
 import { NgModule, Type } from '@angular/core';
+import { SharedModule } from '@shared';
 import { G2MiniAreaModule } from '@yelon/chart/mini-area';
 import { G2MiniBarModule } from '@yelon/chart/mini-bar';
-import { SharedModule } from '@shared';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 
 import { WidgetsRoutingModule } from './widgets-routing.module';
