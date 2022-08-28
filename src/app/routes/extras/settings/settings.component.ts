@@ -1,55 +1,75 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { NzMessageService } from 'ng-zorro-antd/message';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy } from '@angular/core';
+import { ActivationEnd, Router } from '@angular/router';
+import { NzMenuModeType } from 'ng-zorro-antd/menu';
+import { fromEvent, Subscription, debounceTime, filter } from 'rxjs';
 
 @Component({
-  selector: 'app-extras-settings',
-  templateUrl: './settings.component.html'
+  selector: 'app-account-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExtrasSettingsComponent implements OnInit {
-  active = 1;
-  profileForm = this.fb.group({
-    name: ['', Validators.compose([Validators.required, Validators.pattern(`^[-_a-zA-Z0-9]{4,20}$`)])],
-    email: '',
-    bio: ['', Validators.maxLength(160)],
-    url: '',
-    company: '',
-    location: ''
-  });
-  pwd = {
-    old_password: '',
-    new_password: '',
-    confirm_new_password: ''
-  };
-  // Email
-  primary_email = 'cipchk@qq.com';
-
-  constructor(private fb: FormBuilder, public msg: NzMessageService) {}
-
-  profileSave(value: any): void {
-    console.log('profile value', value);
+export class ProAccountSettingsComponent implements AfterViewInit, OnDestroy {
+  private resize$!: Subscription;
+  private router$: Subscription;
+  mode: NzMenuModeType = 'inline';
+  title!: string;
+  menus: Array<{ key: string; title: string; selected?: boolean }> = [
+    {
+      key: 'base',
+      title: '基本设置'
+    },
+    {
+      key: 'security',
+      title: '安全设置'
+    },
+    {
+      key: 'binding',
+      title: '账号绑定'
+    },
+    {
+      key: 'notification',
+      title: '新消息通知'
+    }
+  ];
+  constructor(private router: Router, private cdr: ChangeDetectorRef, private el: ElementRef<HTMLElement>) {
+    this.router$ = this.router.events.pipe(filter(e => e instanceof ActivationEnd)).subscribe(() => this.setActive());
   }
 
-  pwdSave(): void {
-    if (!this.pwd.old_password) {
-      this.msg.error('invalid old password');
-      return;
-    }
-    if (!this.pwd.new_password) {
-      this.msg.error('invalid new password');
-      return;
-    }
-    if (!this.pwd.confirm_new_password) {
-      this.msg.error('invalid confirm new password');
-      return;
-    }
-    console.log('pwd value', this.pwd);
-  }
-
-  ngOnInit(): void {
-    this.profileForm.patchValue({
-      name: 'cipchk',
-      email: 'cipchk@qq.com'
+  private setActive(): void {
+    const key = this.router.url.substring(this.router.url.lastIndexOf('/') + 1);
+    this.menus.forEach(i => {
+      i.selected = i.key === key;
     });
+    this.title = this.menus.find(w => w.selected)!.title;
+  }
+
+  to(item: { key: string }): void {
+    this.router.navigateByUrl(`/pro/account/settings/${item.key}`);
+  }
+
+  private resize(): void {
+    const el = this.el.nativeElement;
+    let mode: NzMenuModeType = 'inline';
+    const { offsetWidth } = el;
+    if (offsetWidth < 641 && offsetWidth > 400) {
+      mode = 'horizontal';
+    }
+    if (window.innerWidth < 768 && offsetWidth > 400) {
+      mode = 'horizontal';
+    }
+    this.mode = mode;
+    this.cdr.detectChanges();
+  }
+
+  ngAfterViewInit(): void {
+    this.resize$ = fromEvent(window, 'resize')
+      .pipe(debounceTime(200))
+      .subscribe(() => this.resize());
+  }
+
+  ngOnDestroy(): void {
+    this.resize$.unsubscribe();
+    this.router$.unsubscribe();
   }
 }
