@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, Optional } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StartupService } from '@core';
-import { environment } from '@env/environment';
 import { ReuseTabService } from '@yelon/abc/reuse-tab';
 import { YA_SERVICE_TOKEN, ITokenService, SocialOpenType, SocialService } from '@yelon/auth';
 import { SettingsService, _HttpClient } from '@yelon/theme';
+import { environment } from '@env/environment';
 import { NzTabChangeEvent } from 'ng-zorro-antd/tabs';
 import { finalize } from 'rxjs';
 
@@ -18,7 +18,7 @@ import { finalize } from 'rxjs';
 })
 export class UserLoginComponent implements OnDestroy {
   constructor(
-    fb: FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private settingsService: SettingsService,
     private socialService: SocialService,
@@ -29,31 +29,17 @@ export class UserLoginComponent implements OnDestroy {
     private startupSrv: StartupService,
     private http: _HttpClient,
     private cdr: ChangeDetectorRef
-  ) {
-    this.form = fb.group({
-      userName: [null, [Validators.required, Validators.pattern(/^(admin|user)$/)]],
-      password: [null, [Validators.required, Validators.pattern(/^(ng\-yunzai\.com)$/)]],
-      mobile: [null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
-      captcha: [null, [Validators.required]],
-      remember: [true]
-    });
-  }
+  ) {}
 
   // #region fields
 
-  get userName(): AbstractControl {
-    return this.form.get('userName')!;
-  }
-  get password(): AbstractControl {
-    return this.form.get('password')!;
-  }
-  get mobile(): AbstractControl {
-    return this.form.get('mobile')!;
-  }
-  get captcha(): AbstractControl {
-    return this.form.get('captcha')!;
-  }
-  form: FormGroup;
+  form = this.fb.group({
+    userName: [null, [Validators.required, Validators.pattern(/^(admin|user)$/)]],
+    password: [null, [Validators.required, Validators.pattern(/^(ng\-yunzai\.com)$/)]],
+    mobile: [null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
+    captcha: [null, [Validators.required]],
+    remember: [true]
+  });
   error = '';
   type = 0;
   loading = false;
@@ -70,9 +56,10 @@ export class UserLoginComponent implements OnDestroy {
   }
 
   getCaptcha(): void {
-    if (this.mobile.invalid) {
-      this.mobile.markAsDirty({ onlySelf: true });
-      this.mobile.updateValueAndValidity({ onlySelf: true });
+    const mobile = this.form.controls.mobile;
+    if (mobile.invalid) {
+      mobile.markAsDirty({ onlySelf: true });
+      mobile.updateValueAndValidity({ onlySelf: true });
       return;
     }
     this.count = 59;
@@ -89,19 +76,21 @@ export class UserLoginComponent implements OnDestroy {
   submit(): void {
     this.error = '';
     if (this.type === 0) {
-      this.userName.markAsDirty();
-      this.userName.updateValueAndValidity();
-      this.password.markAsDirty();
-      this.password.updateValueAndValidity();
-      if (this.userName.invalid || this.password.invalid) {
+      const { userName, password } = this.form.controls;
+      userName.markAsDirty();
+      userName.updateValueAndValidity();
+      password.markAsDirty();
+      password.updateValueAndValidity();
+      if (userName.invalid || password.invalid) {
         return;
       }
     } else {
-      this.mobile.markAsDirty();
-      this.mobile.updateValueAndValidity();
-      this.captcha.markAsDirty();
-      this.captcha.updateValueAndValidity();
-      if (this.mobile.invalid || this.captcha.invalid) {
+      const { mobile, captcha } = this.form.controls;
+      mobile.markAsDirty();
+      mobile.updateValueAndValidity();
+      captcha.markAsDirty();
+      captcha.updateValueAndValidity();
+      if (mobile.invalid || captcha.invalid) {
         return;
       }
     }
@@ -113,8 +102,8 @@ export class UserLoginComponent implements OnDestroy {
     this.http
       .post('/login/account?_allow_anonymous=true', {
         type: this.type,
-        userName: this.userName.value,
-        password: this.password.value
+        userName: this.form.value.userName,
+        password: this.form.value.password
       })
       .pipe(
         finalize(() => {
@@ -151,13 +140,13 @@ export class UserLoginComponent implements OnDestroy {
     let url = ``;
     let callback = ``;
     if (environment.production) {
-      callback = `https://ng-yunzai.github.io/ng-yunzai/#/passport/callback/${type}`;
+      callback = `https://ngsite.yunzainfo.com/ng-yunzai/#/passport/callback/${type}`;
     } else {
       callback = `http://localhost:4200/#/passport/callback/${type}`;
     }
     switch (type) {
       case 'auth0':
-        url = `//devcui.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
+        url = `//cipchk.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
         break;
       case 'github':
         url = `//github.com/login/oauth/authorize?client_id=9d6baae4b04a23fcafa2&response_type=code&redirect_uri=${decodeURIComponent(

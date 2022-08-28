@@ -1,5 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { TestBed, TestBedStatic } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { YelonLocaleService, SettingsService } from '@yelon/theme';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
 import { NzI18nService } from 'ng-zorro-antd/i18n';
@@ -8,7 +8,7 @@ import { of } from 'rxjs';
 import { I18NService } from './i18n.service';
 
 describe('Service: I18n', () => {
-  let injector: TestBedStatic;
+  let injector: TestBed;
   let srv: I18NService;
   const MockSettingsService: NzSafeAny = {
     layout: {
@@ -66,6 +66,12 @@ describe('Service: I18n', () => {
     spyOnProperty(navigator, 'languages').and.returnValue(['zh-TW']);
     genModule();
     expect(srv.defaultLang).toBe('zh-TW');
+  });
+
+  it('should be use default language when the browser language is not in the list', () => {
+    spyOnProperty(navigator, 'languages').and.returnValue(['es-419']);
+    genModule();
+    expect(srv.defaultLang).toBe('zh-CN');
   });
 
   it('should be trigger notify when changed language', () => {
