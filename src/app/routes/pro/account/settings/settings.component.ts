@@ -1,6 +1,5 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
-import { _HttpClient } from '@yelon/theme';
 import { NzMenuModeType } from 'ng-zorro-antd/menu';
 import { fromEvent, Subscription, debounceTime, filter } from 'rxjs';
 
@@ -38,7 +37,7 @@ export class ProAccountSettingsComponent implements AfterViewInit, OnDestroy {
   }
 
   private setActive(): void {
-    const key = this.router.url.substr(this.router.url.lastIndexOf('/') + 1);
+    const key = this.router.url.substring(this.router.url.lastIndexOf('/') + 1);
     this.menus.forEach(i => {
       i.selected = i.key === key;
     });
