@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: install
-        run: npm install && node ./scripts/_ci/fix-day.js
+        run: node ./scripts/_ci/fix-day.js && npm install
 
       - name: build
         shell: bash
