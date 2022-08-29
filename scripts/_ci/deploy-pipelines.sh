@@ -49,11 +49,10 @@ sed -i 's/showSettingDrawer = !environment.production;/showSettingDrawer = true;
 
 if [[ ${GH} == true ]]; then
   echo "Build angular [github gh-pages]"
-  # node --max_old_space_size=5120 ./node_modules/@angular/cli/bin/ng build --prod --base-href /ngsite.yunzainfo.com/
-  node --max_old_space_size=5120 ./node_modules/@angular/cli/bin/ng build --prod  
+  node --max_old_space_size=5120 ./node_modules/@angular/cli/bin/ng build
 else
   echo "Build angular"
-  node --max_old_space_size=5120 ./node_modules/@angular/cli/bin/ng build --prod
+  node --max_old_space_size=5120 ./node_modules/@angular/cli/bin/ng build
 fi
 
 cp -rf ${ROOT_DIR}/CNAME ${DIST_DIR}/CNAME
