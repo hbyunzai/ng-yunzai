@@ -19,7 +19,7 @@
     "button": "应用与服务",
     "all": "全部应用",
     "mine": "我的应用",
-"search":"请输入搜索内容"
+    "search": "请输入搜索内容"
   },
   "menu": {
     "dashboard": {
@@ -107,6 +107,10 @@
   "menu.extras": "扩展",
   "menu.extras.helpcenter": "帮助中心",
   "menu.extras.settings": "设置",
+  "menu.application.mode": "顶部菜单模式",
+  "menu.application.application": "应用模式",
+  "menu.application.group": "分组模式",
+  "menu.application.tiled": "平铺模式",
   "menu.extras.poi": "门店",
   "app.analysis.test": "工专路 {{no}} 号店",
   "app.analysis.introduce": "指标说明",

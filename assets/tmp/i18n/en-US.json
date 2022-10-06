@@ -1,4 +1,8 @@
 {
+  "menu.application.mode": "Header mode",
+  "menu.application.application": "Application mode",
+  "menu.application.group": "Group mode",
+  "menu.application.tiled": "Tiled mode",
   "menu.search.placeholder": "Search for people, file, photos...",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",
