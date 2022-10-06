@@ -1,9 +1,13 @@
 {
-  "application":{
-    "button":"应用与服务",
-    "all":"全部应用",
-    "mine":"我的应用"
+  "application": {
+    "button": "应用与服务",
+    "all": "全部应用",
+    "mine": "我的应用"
   },
+  "menu.application.mode": "顶部菜单模式",
+  "menu.application.application": "应用模式",
+  "menu.application.group": "分组模式",
+  "menu.application.tiled": "平铺模式",
   "menu.search.placeholder": "搜索：員工、文件、照片等",
   "menu.fullscreen": "全屏",
   "menu.fullscreen.exit": "退出全屏",
@@ -134,8 +138,7 @@
   "app.register.get-verification-code": "獲取驗證碼",
   "app.register.sign-in": "使用已有賬戶登錄",
   "app.register-result.msg": "妳的賬戶：{{email}} 註冊成功",
-  "app.register-result.activation-email":
-    "激活郵件已發送到妳的郵箱中，郵件有效期為24小時。請及時登錄郵箱，點擊郵件中的鏈接激活帳戶。",
+  "app.register-result.activation-email": "激活郵件已發送到妳的郵箱中，郵件有效期為24小時。請及時登錄郵箱，點擊郵件中的鏈接激活帳戶。",
   "app.register-result.back-home": "返回首頁",
   "app.register-result.view-mailbox": "檢視郵箱",
   "validation.email.required": "請輸入郵箱地址！",
@@ -157,7 +160,7 @@
   "theme.default": "默认",
   "theme.compact": "压缩",
   "theme.dark": "暗黑",
-  "theme.yuhong":"玉红",
+  "theme.yuhong": "玉红",
   "theme.danjuhuang": "淡橘黄",
   "theme.xinghuang": "杏黄",
   "theme.shilv": "石绿",
