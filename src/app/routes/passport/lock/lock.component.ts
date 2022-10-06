@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { YA_SERVICE_TOKEN, ITokenService } from '@yelon/auth';
 import { SettingsService, User } from '@yelon/theme';
@@ -10,20 +10,15 @@ import { SettingsService, User } from '@yelon/theme';
   styleUrls: ['./lock.component.less']
 })
 export class UserLockComponent {
-  f = this.fb.group({
-    password: [null, Validators.required]
+  f = new FormGroup({
+    password: new FormControl('', { nonNullable: true, validators: [Validators.required] })
   });
 
   get user(): User {
     return this.settings.user;
   }
 
-  constructor(
-    private fb: FormBuilder,
-    @Inject(YA_SERVICE_TOKEN) private tokenService: ITokenService,
-    private settings: SettingsService,
-    private router: Router
-  ) {}
+  constructor(@Inject(YA_SERVICE_TOKEN) private tokenService: ITokenService, private settings: SettingsService, private router: Router) {}
 
   submit(): void {
     this.f.controls.password.markAsDirty();

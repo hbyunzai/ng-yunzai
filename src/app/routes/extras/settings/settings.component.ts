@@ -48,8 +48,8 @@ export class ExtrasSettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm.patchValue({
-      name: 'devcui',
-      email: 'devcui@outlook.com'
+      name: 'cipchk',
+      email: 'cipchk@qq.com'
     });
   }
 }

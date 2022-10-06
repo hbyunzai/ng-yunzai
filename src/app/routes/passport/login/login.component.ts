@@ -1,11 +1,12 @@
+import { HttpContext } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, Optional } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StartupService } from '@core';
-import { ReuseTabService } from '@yelon/abc/reuse-tab';
-import { YA_SERVICE_TOKEN, ITokenService, SocialOpenType, SocialService } from '@yelon/auth';
-import { SettingsService, _HttpClient } from '@yelon/theme';
 import { environment } from '@env/environment';
+import { ReuseTabService } from '@yelon/abc/reuse-tab';
+import { ALLOW_ANONYMOUS, YA_SERVICE_TOKEN, ITokenService, SocialOpenType, SocialService } from '@yelon/auth';
+import { SettingsService, _HttpClient } from '@yelon/theme';
 import { NzTabChangeEvent } from 'ng-zorro-antd/tabs';
 import { finalize } from 'rxjs';
 
@@ -33,11 +34,11 @@ export class UserLoginComponent implements OnDestroy {
 
   // #region fields
 
-  form = this.fb.group({
-    userName: [null, [Validators.required, Validators.pattern(/^(admin|user)$/)]],
-    password: [null, [Validators.required, Validators.pattern(/^(ng\-yunzai\.com)$/)]],
-    mobile: [null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
-    captcha: [null, [Validators.required]],
+  form = this.fb.nonNullable.group({
+    userName: ['', [Validators.required, Validators.pattern(/^(admin|user)$/)]],
+    password: ['', [Validators.required, Validators.pattern(/^(ng\-yunzai\.com)$/)]],
+    mobile: ['', [Validators.required, Validators.pattern(/^1\d{10}$/)]],
+    captcha: ['', [Validators.required]],
     remember: [true]
   });
   error = '';
@@ -96,15 +97,22 @@ export class UserLoginComponent implements OnDestroy {
     }
 
     // 默认配置中对所有HTTP请求都会强制 [校验](https://ng.yunzainfo.com/auth/getting-started) 用户 Token
-    // 然一般来说登录请求不需要校验，因此可以在请求URL加上：`/login?_allow_anonymous=true` 表示不触发用户 Token 校验
+    // 然一般来说登录请求不需要校验，因此加上 `ALLOW_ANONYMOUS` 表示不触发用户 Token 校验
     this.loading = true;
     this.cdr.detectChanges();
     this.http
-      .post('/login/account?_allow_anonymous=true', {
-        type: this.type,
-        userName: this.form.value.userName,
-        password: this.form.value.password
-      })
+      .post(
+        '/login/account',
+        {
+          type: this.type,
+          userName: this.form.value.userName,
+          password: this.form.value.password
+        },
+        null,
+        {
+          context: new HttpContext().set(ALLOW_ANONYMOUS, true)
+        }
+      )
       .pipe(
         finalize(() => {
           this.loading = false;
@@ -140,13 +148,13 @@ export class UserLoginComponent implements OnDestroy {
     let url = ``;
     let callback = ``;
     if (environment.production) {
-      callback = `https://ngsite.yunzainfo.com/ng-yunzai/#/passport/callback/${type}`;
+      callback = `https://hbyunzai.github.io/ng-yunzai/#/passport/callback/${type}`;
     } else {
       callback = `http://localhost:4200/#/passport/callback/${type}`;
     }
     switch (type) {
       case 'auth0':
-        url = `//cipchk.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
+        url = `//simple.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
         break;
       case 'github':
         url = `//github.com/login/oauth/authorize?client_id=9d6baae4b04a23fcafa2&response_type=code&redirect_uri=${decodeURIComponent(
