@@ -46,7 +46,6 @@
     "zone.js": "~0.11.4",
     "ng-zorro-antd": "^14.0.0",
     "ngx-tinymce": "^14.0.0",
-    "ngx-ueditor": "^14.0.0",
     "screenfull": "^6.0.2"
   },
   "devDependencies": {
