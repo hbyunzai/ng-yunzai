@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { GlobalFooterModule } from '@yelon/abc/global-footer';
+import { HotkeyModule } from '@yelon/abc/hotkey';
 import { NoticeIconModule } from '@yelon/abc/notice-icon';
 import { ReuseTabModule } from '@yelon/abc/reuse-tab';
 import { YunzaiThemeModule } from '@yelon/theme';
@@ -62,6 +63,7 @@ const PASSPORT = [LayoutPassportComponent];
     SettingDrawerModule,
     LayoutDefaultModule,
     NoticeIconModule,
+    HotkeyModule,
     GlobalFooterModule,
     NzDropDownModule,
     NzInputModule,

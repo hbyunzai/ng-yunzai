@@ -31,6 +31,7 @@ import { BehaviorSubject, debounceTime, distinctUntilChanged, tap } from 'rxjs';
         (focus)="qFocus()"
         (blur)="qBlur()"
         [attr.placeholder]="'menu.search.placeholder' | i18n"
+        hotkey="F1"
       />
     </nz-input-group>
     <nz-autocomplete nzBackfill #auto>
