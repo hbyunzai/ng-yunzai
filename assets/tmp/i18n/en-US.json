@@ -3,7 +3,7 @@
   "menu.application.application": "Application mode",
   "menu.application.group": "Group mode",
   "menu.application.tiled": "Tiled mode",
-  "menu.search.placeholder": "Search for people, file, photos...",
+  "menu.search.placeholder": "Search for people, file, photos... (Press F1 to focus)",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",
   "menu.clear.local.storage": "Clear Local Storage",
