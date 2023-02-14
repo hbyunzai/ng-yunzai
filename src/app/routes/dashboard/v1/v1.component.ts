@@ -28,7 +28,7 @@ export class DashboardV1Component implements OnInit {
     {
       completed: false,
       avatar: '3',
-      name: 'cipchk',
+      name: 'devcui',
       content: `this world was never meant for one as beautiful as you.`
     },
     {

@@ -154,7 +154,7 @@ export class UserLoginComponent implements OnDestroy {
     }
     switch (type) {
       case 'auth0':
-        url = `//simple.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
+        url = `//devcui.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
         break;
       case 'github':
         url = `//github.com/login/oauth/authorize?client_id=9d6baae4b04a23fcafa2&response_type=code&redirect_uri=${decodeURIComponent(

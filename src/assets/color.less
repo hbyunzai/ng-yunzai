@@ -116,6 +116,8 @@ a.ant-typography, .ant-typography a {color: @primary-color;}
 .ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-selected .ant-picker-calendar-date .ant-picker-calendar-date-value, .ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-selected:hover .ant-picker-calendar-date .ant-picker-calendar-date-value, .ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-selected .ant-picker-calendar-date-today .ant-picker-calendar-date-value, .ant-picker-calendar-full .ant-picker-panel .ant-picker-cell-selected:hover .ant-picker-calendar-date-today .ant-picker-calendar-date-value {color: @primary-color;}
 .ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-today {border-color: @primary-color;}
 .ant-result-info .ant-result-icon > .anticon {color: @primary-color;}
+.ant-cron-expression-input-group-focus {border-color: @primary-color;}
+.ant-cron-expression-label-foucs {color: @primary-color;}
 .setting-drawer__handle {background: @primary-color;}
 .theme-btn-active {color: @primary-color;}
 .theme-btn .ant-avatar:hover {color: @primary-color;}
@@ -134,7 +136,7 @@ a.ant-typography, .ant-typography a {color: @primary-color;}
 .loading-default__icon {color: @primary-color;}
 .loading-default__text {color: @primary-color;}
 .g2-mini-progress__value {background-color: @primary-color;}
-.alain-default__header {background-color: @primary-color;}
+.yunzai-default__header {background-color: @primary-color;}
 .sidebar-nav__item-link:hover {color: @primary-color;}
 .sidebar-nav__selected {border-left-color: @primary-color;}
 .sidebar-nav__selected > .sidebar-nav__item-link {color: @primary-color;}
@@ -1916,57 +1918,60 @@ this.tinycolor = tinycolor;})()`;}
 @hafl-float-size: sm @layout-gutter * 8, md @layout-gutter * 10, lg @layout-gutter * 12;
 @masonry-enabled: true;
 @masonry-column-gap: @layout-gutter * 2;
-@alain-default-prefix: ~'.alain-default';
-@alain-default-zindex: @zindex-base;
-@alain-default-ease: cubic-bezier(0.25, 0, 0.15, 1);
-@alain-default-header-hg: 64px;
-@alain-default-header-bg: @primary-color;
-@alain-default-header-padding: @layout-gutter * 2;
-@alain-default-header-search-enabled: true;
-@alain-default-header-icon-fs: 18px;
-@alain-default-header-logo-max-height: 36px;
-@alain-default-header-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-@alain-default-aside-wd: 200px;
-@alain-default-aside-bg: #fff;
-@alain-default-aside-scrollbar-width: 0;
-@alain-default-aside-scrollbar-height: 0;
-@alain-default-aside-scrollbar-track-color: transparent;
-@alain-default-aside-scrollbar-thumb-color: transparent;
-@alain-default-aside-nav-fs: 14px;
-@alain-default-aside-nav-icon-width: 14px;
-@alain-default-aside-nav-img-wh: 14px;
-@alain-default-aside-nav-padding-top-bottom: @layout-gutter;
-@alain-default-aside-nav-padding-left-right: @layout-gutter * 2;
-@alain-default-aside-nav-text-color: @text-color;
-@alain-default-aside-nav-text-hover-color: @primary-color;
-@alain-default-aside-nav-group-text-color: @text-color-secondary;
-@alain-default-aside-nav-selected-text-color: @primary-color;
-@alain-default-aside-nav-selected-bg: #fcfcfc;
-@alain-default-aside-nav-item-height: 38px;
-@alain-default-aside-nav-depth1-padding-left: @layout-gutter * 3;
-@alain-default-aside-nav-depth2-padding-left: @layout-gutter * 4;
-@alain-default-aside-nav-depth3-padding-left: @layout-gutter * 5;
-@alain-default-aside-nav-depth4-padding-left: @layout-gutter * 6;
-@alain-default-aside-nav-depth5-padding-left: @layout-gutter * 7;
-@alain-default-aside-collapsed-wd: @layout-gutter * 8;
-@alain-default-aside-collapsed-nav-fs: 24px;
-@alain-default-aside-collapsed-nav-img-wh: 24px;
-@alain-default-content-heading-bg: #fafbfc;
-@alain-default-content-heading-border: #efe3e5;
-@alain-default-content-padding: @layout-gutter * 3;
-@alain-default-content-bg: #f5f7fa;
-@alain-default-widget-app-icons-enabled: true;
-@alain-default-aside-user-enabled: true;
-@alain-blank-prefix: ~'.alain-blank';
-@alain-blank-zindex: @zindex-base;
-@alain-blank-bg: #f5f7fa;
-@alain-blank-content-padding-vertical: 0;
-@alain-blank-content-padding-horizontal: @layout-gutter * 2;
+@yunzai-default-prefix: ~'.yunzai-default';
+@yunzai-default-zindex: @zindex-base;
+@yunzai-default-ease: cubic-bezier(0.25, 0, 0.15, 1);
+@yunzai-default-header-hg: 64px;
+@yunzai-default-header-bg: @primary-color;
+@yunzai-default-header-padding: @layout-gutter * 2;
+@yunzai-default-header-search-enabled: true;
+@yunzai-default-header-icon-fs: 18px;
+@yunzai-default-header-logo-max-height: 36px;
+@yunzai-default-header-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+@yunzai-default-header-nav-bg-hover: rgba(255, 255, 255, 0.2);
+@yunzai-default-header-top-menu-item-padding: 0 16px;
+@yunzai-default-aside-wd: 200px;
+@yunzai-default-aside-bg: #fff;
+@yunzai-default-aside-scrollbar-width: 0;
+@yunzai-default-aside-scrollbar-height: 0;
+@yunzai-default-aside-scrollbar-track-color: transparent;
+@yunzai-default-aside-scrollbar-thumb-color: transparent;
+@yunzai-default-aside-nav-fs: 14px;
+@yunzai-default-aside-nav-icon-width: 14px;
+@yunzai-default-aside-nav-img-wh: 14px;
+@yunzai-default-aside-nav-padding-top-bottom: @layout-gutter;
+@yunzai-default-aside-nav-padding-left-right: @layout-gutter * 2;
+@yunzai-default-aside-nav-text-color: @text-color;
+@yunzai-default-aside-nav-text-hover-color: @primary-color;
+@yunzai-default-aside-nav-group-text-color: @text-color-secondary;
+@yunzai-default-aside-nav-selected-text-color: @primary-color;
+@yunzai-default-aside-nav-selected-bg: #fcfcfc;
+@yunzai-default-aside-nav-depth1-padding-left: @layout-gutter * 3;
+@yunzai-default-aside-nav-depth2-padding-left: @layout-gutter * 4;
+@yunzai-default-aside-nav-depth3-padding-left: @layout-gutter * 5;
+@yunzai-default-aside-nav-depth4-padding-left: @layout-gutter * 6;
+@yunzai-default-aside-nav-depth5-padding-left: @layout-gutter * 7;
+@yunzai-default-aside-collapsed-wd: @layout-gutter * 8;
+@yunzai-default-aside-collapsed-nav-fs: 24px;
+@yunzai-default-aside-collapsed-nav-img-wh: 24px;
+@yunzai-default-aside-collapsed-padding: (@layout-gutter * 2) 0;
+@yunzai-default-content-heading-bg: #fafbfc;
+@yunzai-default-content-heading-border: #efe3e5;
+@yunzai-default-content-padding: @layout-gutter * 3;
+@yunzai-default-content-bg: #f5f7fa;
+@yunzai-default-widget-app-icons-enabled: true;
+@yunzai-default-aside-user-enabled: true;
+@yunzai-blank-prefix: ~'.yunzai-blank';
+@yunzai-blank-zindex: @zindex-base;
+@yunzai-blank-bg: #f5f7fa;
+@yunzai-blank-content-padding-vertical: 0;
+@yunzai-blank-content-padding-horizontal: @layout-gutter * 2;
 @st-btn-disabled-color: rgba(0, 0, 0, 0.25);
 @st-title-optional-color: rgba(0, 0, 0, 0.35);
 @st-resizable-handle-width: 1px;
 @st-resizable-handle-height: 60%;
 @st-resizable-handle-color: @border-color-base;
+@st-no-column-height: 100px;
 @sv-label-color: rgba(0, 0, 0, 0.5);
 @sv-label-optional-color: rgba(0, 0, 0, 0.35);
 @sv-detail-color: @text-color;

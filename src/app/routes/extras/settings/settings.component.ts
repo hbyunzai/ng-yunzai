@@ -22,7 +22,7 @@ export class ExtrasSettingsComponent implements OnInit {
     confirm_new_password: ''
   };
   // Email
-  primary_email = 'cipchk@qq.com';
+  primary_email = 'devcui@outlook.com';
 
   constructor(private fb: FormBuilder, public msg: NzMessageService) {}
 
@@ -48,8 +48,8 @@ export class ExtrasSettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm.patchValue({
-      name: 'cipchk',
-      email: 'cipchk@qq.com'
+      name: 'devcui',
+      email: 'devcui@outlook.com'
     });
   }
 }

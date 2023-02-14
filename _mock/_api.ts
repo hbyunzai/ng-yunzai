@@ -1,5 +1,7 @@
 import { MockRequest, MockStatusError } from '@yelon/mock';
 
+// region: mock data
+
 const titles = ['Alipay', 'Angular', 'Ant Design', 'Ant Design Pro', 'Bootstrap', 'React', 'Vue', 'Webpack'];
 
 const avatars = [
@@ -26,7 +28,9 @@ const desc = [
   '那时候我只会想自己想要什么，从不想自己拥有什么'
 ];
 
-const user = ['卡色', 'devcui', '付小小', '曲丽丽', '林东东', '周星星', '吴加好', '朱偏右', '鱼酱', '乐哥', '谭小仪', '仲尼'];
+const user = ['dc', 'devcui', '付小小', '曲丽丽', '林东东', '周星星', '吴加好', '朱偏右', '鱼酱', '乐哥', '谭小仪', '仲尼'];
+
+// endregion
 
 function getFakeList(count: number = 20): any[] {
   const list: any[] = [];

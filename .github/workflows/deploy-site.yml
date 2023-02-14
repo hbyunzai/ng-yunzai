@@ -14,17 +14,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
 
-      - uses: actions/setup-node@v3
+      - uses: borales/actions-yarn@v3.0.0
         with:
-          node-version: 16.15.0
-      
-      - name: "install dependence"
-        run: |
-          node --version
-          yarn --version
-          node ./scripts/_ci/fix-day.js
-          yarn config list
-          yarn install
+          cmd: install
 
       - name: build
         shell: bash
@@ -42,7 +34,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: '<base href="/">'
-          replace: '<base href="/">'
+          replace: '<base href="/ng-yunzai">'
           include: '*.html'
           regex: false
 
@@ -50,6 +42,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./dist
         with:

@@ -89,7 +89,6 @@ export class DashboardAnalysisComponent implements OnInit {
     this.dateRangeType = type;
     setTimeout(() => this.cdr.detectChanges());
   }
-
   changeSaleType(): void {
     this.salesPieData =
       this.salesType === 'all'

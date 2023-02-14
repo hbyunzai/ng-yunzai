@@ -9,9 +9,9 @@ import {
 } from '@angular/common/http';
 import { Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '@env/environment';
 import { YA_SERVICE_TOKEN, ITokenService } from '@yelon/auth';
 import { YUNZAI_I18N_TOKEN, IGNORE_BASE_URL, _HttpClient, CUSTOM_ERROR, RAW_BODY } from '@yelon/theme';
-import { environment } from '@env/environment';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { BehaviorSubject, Observable, of, throwError, catchError, filter, mergeMap, switchMap, take } from 'rxjs';
 
