@@ -134,7 +134,7 @@ stages:
           - script: yarn install
             displayName: 'Install'
           - script: |
-              node ./scripts/_ci/github-comment.js "RELEASE_DAY" "[Using day release @yelon, Preview Failed](https://dev.azure.com/hbyunzai/ng-yunzai/_build/results?buildId=$(Build.BuildId))"
+              node ./scripts/_ci/github-comment.js "RELEASE_DAY" "[Using day release @yelon, Preview Failed](https://dev.azure.com/hbyunzai/yelon/_build/results?buildId=$(Build.BuildId))"
             displayName: 'Comment on github'
             env:
               ACCESS_REPO: $(ACCESS_REPO)
