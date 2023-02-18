@@ -21,7 +21,7 @@ Yelon
   [![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)
   [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/hbyunzai/ng-yunzai/blob/master/LICENSE)
   [![Gitter](https://img.shields.io/gitter/room/hbyunzai/ng-yunzai.svg?style=flat-square)](https://gitter.im/hbyunzai/ng-yunzai)
-  [![ng-yunzai-vscode](https://img.shields.io/badge/ng--yunzai-VSCODE-brightgreen.svg?style=flat-square)](https://code.visualstudio.com)
+  [![ng-yunzai-vscode](https://img.shields.io/badge/ng--yunzai-VSCODE-brightgreen.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=yunzai-bot.ng-yunzai-vscode)
   [![ng-yunzai-webstorm](https://img.shields.io/badge/ng--yunzai-webstorm-brightgreen.svg?style=flat-square)](https://www.jetbrains.com/webstorm)
 
 </div>
