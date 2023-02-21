@@ -1,26 +1,4 @@
 {
-  "notify": {
-    "clear": "清除",
-    "message": "消息",
-    "message.clearText": "清除所有消息",
-    "message.emptyText": "没有新的消息",
-    "todo": "待办",
-    "todo.clearText": "重新加载待办",
-    "todo.emptyText": "没有新的待办",
-    "notice": "通知",
-    "notice.emptyText": "没有新的通知",
-    "unread": "未读",
-    "readed": "已读",
-    "unstart": "未开始",
-    "started": "已开始",
-    "nostatus": "无状态"
-  },
-  "application": {
-    "button": "应用与服务",
-    "all": "全部应用",
-    "mine": "我的应用",
-    "search": "请输入搜索内容"
-  },
   "menu": {
     "dashboard": {
       "": "仪表盘",
@@ -30,21 +8,6 @@
       "workplace": "工作台"
     }
   },
-  "theme": {
-    "default": "默认",
-    "compact": "紧凑",
-    "dark": "深色",
-    "yuhong": "玉红",
-    "danjuhuang": "淡菊黄",
-    "xinghuang": "杏黄",
-    "shilv": "石绿",
-    "zhulv": "竹绿",
-    "youlan": "釉蓝",
-    "dianqing": "靛青",
-    "shangengzi": "山梗紫",
-    "shuiniuhui": "水牛灰"
-  },
-  "menu.backtohome": "主页",
   "menu.search.placeholder": "搜索：员工、文件、照片等，按 F1 可触发",
   "menu.fullscreen": "全屏",
   "menu.fullscreen.exit": "退出全屏",
@@ -107,10 +70,6 @@
   "menu.extras": "扩展",
   "menu.extras.helpcenter": "帮助中心",
   "menu.extras.settings": "设置",
-  "menu.application.mode": "顶部菜单模式",
-  "menu.application.application": "应用模式",
-  "menu.application.group": "分组模式",
-  "menu.application.tiled": "平铺模式",
   "menu.extras.poi": "门店",
   "app.analysis.test": "工专路 {{no}} 号店",
   "app.analysis.introduce": "指标说明",

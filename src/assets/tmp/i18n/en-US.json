@@ -1,8 +1,4 @@
 {
-  "menu.application.mode": "Header mode",
-  "menu.application.application": "Application mode",
-  "menu.application.group": "Group mode",
-  "menu.application.tiled": "Tiled mode",
   "menu.search.placeholder": "Search for people, file, photos... (Press F1 to focus)",
   "menu.fullscreen": "Fullscreen",
   "menu.fullscreen.exit": "Exit Fullscreen",
@@ -153,42 +149,5 @@
   "validation.title.required": "Please enter a title",
   "validation.date.required": "Please select the start and end date",
   "validation.goal.required": "Please enter a description of the goal",
-  "validation.standard.required": "Please enter a metric",
-  "theme": {
-    "default": "Default",
-    "compact": "Compact",
-    "dark": "Dark",
-    "yuhong": "Yu Hong",
-    "danjuhuang": "Dan Juhuang",
-    "xinghuang": "Xing Huang",
-    "shilv": "Shi Lv",
-    "zhulv": "Zhu Lv",
-    "youlan": "You Lan",
-    "dianqing": "Dian Qing",
-    "shangengzi": "Shan Gengzi",
-    "shuiniuhui": "Shui Niuhui"
-  },
-  "application": {
-    "button": "Application And Service",
-    "all": "All Applications",
-    "mine": "My Applications",
-    "search": "Please in put the application name that you want to search!"
-  },
-  "menu.backtohome": "home",
-  "notify": {
-    "clear": "clean",
-    "message": "message",
-    "message.clearText": "clean all message",
-    "message.emptyText": "no message",
-    "todo": "todo",
-    "todo.clearText": "reload todo list",
-    "todo.emptyText": "no todo",
-    "notice": "notice",
-    "notice.emptyText": "no notice",
-    "unread": "unread",
-    "readed": "readed",
-    "unstart": "unstart",
-    "started": "started",
-    "nostatus": "no status"
-  }
+  "validation.standard.required": "Please enter a metric"
 }
