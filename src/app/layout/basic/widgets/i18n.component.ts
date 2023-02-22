@@ -1,7 +1,8 @@
 import { DOCUMENT } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Inject, Input } from '@angular/core';
-import { YUNZAI_I18N_TOKEN, SettingsService } from '@yelon/theme';
+import { ChangeDetectionStrategy, Component, Inject, Input, OnDestroy } from '@angular/core';
+import { YUNZAI_I18N_TOKEN, SettingsService, YunzaiI18NType } from '@yelon/theme';
 import { BooleanInput, InputBoolean } from '@yelon/util/decorator';
+import { Subject, takeUntil } from 'rxjs';
 
 import { I18NService } from '../../../core';
 
@@ -28,24 +29,26 @@ import { I18NService } from '../../../core';
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HeaderI18nComponent {
+export class HeaderI18nComponent implements OnDestroy {
   static ngAcceptInputType_showLangText: BooleanInput;
+  langs: YunzaiI18NType[] = [];
+  private destroy$: Subject<any> = new Subject<any>();
   /** Whether to display language text */
   @Input() @InputBoolean() showLangText = true;
-
-  get langs(): Array<{ code: string; text: string; abbr: string }> {
-    return this.i18n.getLangs();
-  }
 
   get curLangCode(): string {
     return this.settings.layout.lang;
   }
 
-  constructor(
-    private settings: SettingsService,
-    @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService,
-    @Inject(DOCUMENT) private doc: any
-  ) {}
+  constructor(private settings: SettingsService, @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService, @Inject(DOCUMENT) private doc: any) {
+    this.i18n
+      .getLangs()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(langs => (this.langs = langs));
+  }
+  ngOnDestroy(): void {
+    this.destroy$.complete();
+  }
 
   change(lang: string): void {
     const spinEl = this.doc.createElement('div');
