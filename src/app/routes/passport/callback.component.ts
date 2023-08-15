@@ -20,7 +20,7 @@ export class CallbackComponent implements OnInit {
 
   private mockModel(): void {
     const info = {
-      token: '123456789',
+      access_token: '123456789',
       name: 'devcui',
       email: `${this.type}@${this.type}.com`,
       id: 10000,
@@ -28,7 +28,7 @@ export class CallbackComponent implements OnInit {
     };
     this.settingsSrv.setUser({
       ...this.settingsSrv.user,
-      ...info
+      ...info,
     });
     this.socialService.callback(info);
   }

@@ -127,7 +127,7 @@ export class DefaultInterceptor implements HttpInterceptor {
    */
   private reAttachToken(req: HttpRequest<any>): HttpRequest<any> {
     // 以下示例是以 NG-YUNZAI 默认使用 `SimpleInterceptor`
-    const token = this.tokenSrv.get()?.token;
+    const token = this.tokenSrv.get()?.access_token;
     return req.clone({
       setHeaders: {
         token: `Bearer ${token}`
