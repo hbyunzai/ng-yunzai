@@ -108,7 +108,7 @@ export const USERS = {
     return {
       msg: 'ok',
       user: {
-        token: '123456789',
+        access_token: '123456789',
         name: data.userName,
         email: `${data.userName}@qq.com`,
         id: 10000,
