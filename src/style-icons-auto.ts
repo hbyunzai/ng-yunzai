@@ -794,7 +794,7 @@ import {
   YahooFill
 } from '@ant-design/icons-angular/icons';
 
-export const ICONS = [
+export const ICONS_AUTO = [
   AccountBookTwoTone,
   AccountBookFill,
   AccountBookOutline,
