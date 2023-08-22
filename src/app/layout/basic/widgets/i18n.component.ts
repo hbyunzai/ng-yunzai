@@ -40,7 +40,11 @@ export class HeaderI18nComponent implements OnDestroy {
     return this.settings.layout.lang;
   }
 
-  constructor(private settings: SettingsService, @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService, @Inject(DOCUMENT) private doc: any) {
+  constructor(
+    private settings: SettingsService,
+    @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService,
+    @Inject(DOCUMENT) private doc: any
+  ) {
     this.i18n
       .getLangs()
       .pipe(takeUntil(this.destroy$))

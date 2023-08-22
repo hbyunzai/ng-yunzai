@@ -11,7 +11,11 @@ import { SettingsService } from '@yelon/theme';
 export class CallbackComponent implements OnInit {
   type = '';
 
-  constructor(private socialService: SocialService, private settingsSrv: SettingsService, private route: ActivatedRoute) {}
+  constructor(
+    private socialService: SocialService,
+    private settingsSrv: SettingsService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.type = this.route.snapshot.params['type'];
@@ -28,7 +32,7 @@ export class CallbackComponent implements OnInit {
     };
     this.settingsSrv.setUser({
       ...this.settingsSrv.user,
-      ...info,
+      ...info
     });
     this.socialService.callback(info);
   }

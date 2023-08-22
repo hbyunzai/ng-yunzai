@@ -113,7 +113,8 @@ module.exports = {
     {
       files: ['*.html'],
       extends: ['plugin:@angular-eslint/template/recommended'],
-      rules: {}
+      rules: {
+      }
     },
     {
       files: ['*.html'],
