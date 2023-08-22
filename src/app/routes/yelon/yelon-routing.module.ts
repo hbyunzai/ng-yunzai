@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ACLGuard } from '@yelon/acl';
+import {aclCanActivate, ACLGuard} from '@yelon/acl';
 
 import { ACLComponent } from './acl/acl.component';
 import { CacheComponent } from './cache/cache.component';
@@ -36,13 +36,13 @@ const routes: Routes = [
       {
         path: 'auth',
         component: GuardAuthComponent,
-        canActivate: [ACLGuard],
+        canActivate: [aclCanActivate],
         data: { guard: 'user1' }
       },
       {
         path: 'admin',
         component: GuardAdminComponent,
-        canActivate: [ACLGuard],
+        canActivate: [aclCanActivate],
         data: { guard: 'admin' }
       }
     ]

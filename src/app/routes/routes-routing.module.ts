@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { startPageGuard } from '@core';
 import { environment } from '@env/environment';
-import { SimpleGuard } from '@yelon/auth';
+import {authSimpleCanActivate, authSimpleCanActivateChild} from '@yelon/auth';
 import { PreloadOptionalModules } from '@yelon/theme';
 
 // layout
@@ -13,8 +13,8 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutBasicComponent,
-    canActivate: [startPageGuard, SimpleGuard],
-    canActivateChild: [SimpleGuard],
+    canActivate: [startPageGuard, authSimpleCanActivate],
+    canActivateChild: [authSimpleCanActivateChild],
     data: {},
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
