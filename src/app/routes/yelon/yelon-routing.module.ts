@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {aclCanActivate, ACLGuard} from '@yelon/acl';
+import {aclCanActivate } from '@yelon/acl';
 
 import { ACLComponent } from './acl/acl.component';
 import { CacheComponent } from './cache/cache.component';

@@ -26,6 +26,6 @@ export class GuardComponent {
       this.aclSrv.set({ role: [value as string] });
     }
     this.menuSrv.resume();
-    this.router.navigate(['/delon/guard']);
+    this.router.navigate(['/yelon/guard']);
   }
 }
