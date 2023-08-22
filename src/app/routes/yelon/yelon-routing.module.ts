@@ -8,7 +8,6 @@ import { DownFileComponent } from './downfile/downfile.component';
 import { YelonFormComponent } from './form/form.component';
 import { GuardAdminComponent } from './guard/admin.component';
 import { GuardAuthComponent } from './guard/auth.component';
-import { CanLeaveProvide } from './guard/can-leave.provide';
 import { GuardComponent } from './guard/guard.component';
 import { GuardLeaveComponent } from './guard/leave.component';
 import { PrintComponent } from './print/print.component';
@@ -17,6 +16,8 @@ import { STDemoComponent } from './st/st.component';
 import { UtilComponent } from './util/util.component';
 import { XlsxComponent } from './xlsx/xlsx.component';
 import { ZipComponent } from './zip/zip.component';
+import { canLeave } from './guard/can-leave';
+
 
 const routes: Routes = [
   { path: 'st', component: STDemoComponent },
@@ -30,7 +31,7 @@ const routes: Routes = [
       {
         path: 'leave',
         component: GuardLeaveComponent,
-        canDeactivate: [CanLeaveProvide]
+        canDeactivate: [canLeave]
       },
       {
         path: 'auth',
