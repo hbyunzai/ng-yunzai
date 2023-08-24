@@ -9,6 +9,7 @@
     "stylelint-declaration-block-no-ignored-properties"
   ],
   "rules": {
+    "media-query-no-invalid": null,
     "function-no-unknown": null,
     "no-descending-specificity": null,
     "plugin/declaration-block-no-ignored-properties": true,
