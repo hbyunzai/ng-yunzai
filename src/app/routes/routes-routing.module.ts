@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { startPageGuard } from '@core';
-import { environment } from '@env/environment';
-import {authSimpleCanActivate, authSimpleCanActivateChild} from '@yelon/auth';
+import { authSimpleCanActivate, authSimpleCanActivateChild } from '@yelon/auth';
 import { PreloadOptionalModules } from '@yelon/theme';
+import { environment } from '@env/environment';
 
 // layout
 import { LayoutBasicComponent } from '../layout/basic/basic.component';
@@ -53,7 +53,8 @@ const routes: Routes = [
       // NOTICE: If you use `reuse-tab` component and turn on keepingScroll you can set to `disabled`
       // Pls refer to https://ng.yunzainfo.com/components/reuse-tab
       scrollPositionRestoration: 'top',
-      preloadingStrategy: PreloadOptionalModules
+      preloadingStrategy: PreloadOptionalModules,
+      bindToComponentInputs: true
     })
   ],
   exports: [RouterModule]

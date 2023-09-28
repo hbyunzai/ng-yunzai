@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { SocialService } from '@yelon/auth';
 import { SettingsService } from '@yelon/theme';
 
@@ -9,23 +8,21 @@ import { SettingsService } from '@yelon/theme';
   providers: [SocialService]
 })
 export class CallbackComponent implements OnInit {
-  type = '';
+  @Input() type = '';
 
   constructor(
     private socialService: SocialService,
-    private settingsSrv: SettingsService,
-    private route: ActivatedRoute
+    private settingsSrv: SettingsService
   ) {}
 
   ngOnInit(): void {
-    this.type = this.route.snapshot.params['type'];
     this.mockModel();
   }
 
   private mockModel(): void {
     const info = {
-      access_token: '123456789',
-      name: 'devcui',
+      token: '123456789',
+      name: 'cipchk',
       email: `${this.type}@${this.type}.com`,
       id: 10000,
       time: +new Date()
