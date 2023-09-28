@@ -1,6 +1,25 @@
 {
-  "name": "ng-yunzai",
-  "version": "16.2.5",
+  "name": "ng-alain",
+  "version": "16.3.0",
+  "description": "ng-zorro-antd admin panel front-end framework",
+  "author": "cipchk <cipchk@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ng-alain/ng-alain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ng-alain/ng-alain/issues"
+  },
+  "homepage": "https://ng-alain.com",
+  "license": "MIT",
+  "keywords": [
+    "delon",
+    "antd",
+    "ng-zorro-antd",
+    "angular",
+    "component",
+    "scaffold"
+  ],
   "scripts": {
     "ng-high-memory": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng",
     "ng": "ng",
@@ -15,15 +34,12 @@
     "e2e": "ng e2e",
     "test": "ng test --watch",
     "test-coverage": "ng test --code-coverage --watch=false",
-    "color-less": "ng-yunzai-plugin-theme -t=colorLess",
-    "theme": "ng-yunzai-plugin-theme -t=themeCss",
-    "icon": "ng g ng-yunzai:plugin icon",
-    "prepare": "husky install",
-    "sync:delon:version": "node scripts/fix-version.js"
+    "color-less": "ng-alain-plugin-theme -t=colorLess",
+    "theme": "ng-alain-plugin-theme -t=themeCss",
+    "icon": "ng g ng-alain:plugin icon",
+    "prepare": "husky install"
   },
   "dependencies": {
-    "@angular/cdk": "^16.1.0",
-    "@stomp/rx-stomp": "^1.2.0",
     "@angular/animations": "^16.2.0",
     "@angular/common": "^16.2.0",
     "@angular/compiler": "^16.2.0",
@@ -36,23 +52,19 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0",
     "ng-zorro-antd": "^16.1.0",
-    "@yelon/abc": "^16.2.5",
-    "@yelon/acl": "^16.2.5",
-    "@yelon/auth": "^16.2.5",
-    "@yelon/cache": "^16.2.5",
-    "@yelon/chart": "^16.2.5",
-    "@yelon/form": "^16.2.5",
-    "@yelon/mock": "^16.2.5",
-    "@yelon/theme": "^16.2.5",
-    "@yelon/util": "^16.2.5",
-    "@yelon/bis": "^16.2.5",
-    "@yelon/bcs": "^16.2.5",
-    "@yelon/socket": "^16.2.5",
+    "@delon/abc": "^16.3.0",
+    "@delon/acl": "^16.3.0",
+    "@delon/auth": "^16.3.0",
+    "@delon/cache": "^16.3.0",
+    "@delon/chart": "^16.3.0",
+    "@delon/form": "^16.3.0",
+    "@delon/mock": "^16.3.0",
+    "@delon/theme": "^16.3.0",
+    "@delon/util": "^16.3.0",
     "ngx-tinymce": "^16.0.0",
     "screenfull": "^6.0.2"
   },
   "devDependencies": {
-    "@types/node": "^12.11.1",
     "@angular-devkit/build-angular": "^16.2.0",
     "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.2.0",
@@ -86,17 +98,14 @@
     "stylelint-config-standard": "^34.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
     "stylelint-order": "^6.0.3",
-    "@yelon/testing": "^16.2.5",
-    "ng-yunzai": "^16.2.5",
+    "@delon/testing": "^16.3.0",
+    "ng-alain": "^16.3.0",
     "@types/jasminewd2": "~2.0.10",
     "jasmine-spec-reporter": "^7.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~10.9.1",
-    "node-fetch": "^2.6.1",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "ng-yunzai-plugin-theme": "^15.0.2",
-    "ng-yunzai-sts": "^0.0.3"
+    "lint-staged": "^14.0.1"
   },
   "lint-staged": {
     "(src)/**/*.{html,ts}": [
