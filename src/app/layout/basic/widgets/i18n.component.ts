@@ -1,50 +1,52 @@
 import { DOCUMENT } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Inject, Input, OnDestroy } from '@angular/core';
-import { YUNZAI_I18N_TOKEN, SettingsService, YunzaiI18NType } from '@yelon/theme';
-import { BooleanInput, InputBoolean } from '@yelon/util/decorator';
+import { ChangeDetectionStrategy, Component, Input, booleanAttribute, inject, Inject, OnInit, OnDestroy } from '@angular/core';
+import { I18NService } from '@core';
+import { YUNZAI_I18N_TOKEN, I18nPipe, SettingsService, YunzaiI18NType } from '@yelon/theme';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { Subject, takeUntil } from 'rxjs';
-
-import { I18NService } from '../../../core';
 
 @Component({
   selector: 'header-i18n',
   template: `
-    <div *ngIf="showLangText" nz-dropdown [nzDropdownMenu]="langMenu" nzPlacement="bottomRight">
-      <i nz-icon nzType="global"></i>
-      {{ 'menu.lang' | i18n }}
-      <i nz-icon nzType="down"></i>
-    </div>
-    <i *ngIf="!showLangText" nz-dropdown [nzDropdownMenu]="langMenu" nzPlacement="bottomRight" nz-icon nzType="global"></i>
+    @if (showLangText) {
+      <div nz-dropdown [nzDropdownMenu]="langMenu" nzPlacement="bottomRight">
+        <i nz-icon nzType="global"></i>
+        {{ 'menu.lang' | i18n }}
+        <i nz-icon nzType="down"></i>
+      </div>
+    } @else {
+      <i nz-dropdown [nzDropdownMenu]="langMenu" nzPlacement="bottomRight" nz-icon nzType="global"></i>
+    }
     <nz-dropdown-menu #langMenu="nzDropdownMenu">
       <ul nz-menu>
-        <li nz-menu-item *ngFor="let item of langs" [nzSelected]="item.code === curLangCode" (click)="change(item.code)">
-          <span role="img" [attr.aria-label]="item.text" class="pr-xs">{{ item.abbr }}</span>
-          {{ item.text }}
-        </li>
+        @for (item of langs; track $index) {
+          <li nz-menu-item [nzSelected]="item.code === curLangCode" (click)="change(item.code)">
+            <span role="img" [attr.aria-label]="item.text" class="pr-xs">{{ item.abbr }}</span>
+            {{ item.text }}
+          </li>
+        }
       </ul>
     </nz-dropdown-menu>
   `,
   host: {
     '[class.flex-1]': 'true'
   },
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [I18nPipe, NzDropDownModule, NzIconModule, NzMenuModule]
 })
-export class HeaderI18nComponent implements OnDestroy {
-  static ngAcceptInputType_showLangText: BooleanInput;
+export class HeaderI18nComponent implements OnInit, OnDestroy {
+  private readonly settings = inject(SettingsService);
+  private readonly i18n = inject<I18NService>(YUNZAI_I18N_TOKEN);
+  private readonly doc = inject(DOCUMENT);
   langs: YunzaiI18NType[] = [];
   private destroy$: Subject<any> = new Subject<any>();
   /** Whether to display language text */
-  @Input() @InputBoolean() showLangText = true;
+  @Input({ transform: booleanAttribute }) showLangText = true;
 
-  get curLangCode(): string {
-    return this.settings.layout.lang;
-  }
-
-  constructor(
-    private settings: SettingsService,
-    @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService,
-    @Inject(DOCUMENT) private doc: any
-  ) {
+  ngOnInit(): void {
     this.i18n
       .getLangs()
       .pipe(takeUntil(this.destroy$))
@@ -52,6 +54,10 @@ export class HeaderI18nComponent implements OnDestroy {
   }
   ngOnDestroy(): void {
     this.destroy$.complete();
+  }
+
+  get curLangCode(): string {
+    return this.settings.layout.lang;
   }
 
   change(lang: string): void {

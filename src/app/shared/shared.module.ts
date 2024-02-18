@@ -26,7 +26,7 @@ const DIRECTIVES: Array<Type<any>> = [];
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    YunzaiThemeModule.forChild(),
+    YunzaiThemeModule,
     YelonACLModule,
     YelonFormModule,
     ...SHARED_YELON_MODULES,

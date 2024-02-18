@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ControlWidget } from '@yelon/form';
+import { ControlWidget, YelonFormModule } from '@yelon/form';
 
 @Component({
   selector: 'test',
@@ -9,7 +9,9 @@ import { ControlWidget } from '@yelon/form';
     </sf-item-wrap>
   `,
   preserveWhitespaces: false,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [YelonFormModule]
 })
 export class TestWidget extends ControlWidget implements OnInit {
   static readonly KEY = 'test';

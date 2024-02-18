@@ -18,11 +18,11 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "polyfills": [
               "zone.js"
@@ -71,12 +71,9 @@
               ]
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -84,15 +81,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-yunzai:build",
-            "proxyConfig": "proxy.conf.js"
+            "proxyConfig": "proxy.conf.js",
+            "buildTarget": "ng-yunzai:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-yunzai:build:production"
+              "buildTarget": "ng-yunzai:build:production"
             },
             "development": {
-              "browserTarget": "ng-yunzai:build:development"
+              "buildTarget": "ng-yunzai:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -100,7 +97,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-yunzai:build"
+            "buildTarget": "ng-yunzai:build"
           }
         },
         "test": {
@@ -147,7 +144,14 @@
     "schematicCollections": [
       "@schematics/angular",
       "ng-yunzai"
-    ],
-    "analytics": "90db31c9-1a68-4a43-b389-21957b7a33fd"
+    ]
+  },
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
   }
 }

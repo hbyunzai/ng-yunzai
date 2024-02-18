@@ -1,1 +1,1 @@
-[Document](https://ng.yuznainfo.com/cli/generate#Custom-template-page)
+[Document](https://ng.yunzainfo.com/cli/generate#Custom-template-page)

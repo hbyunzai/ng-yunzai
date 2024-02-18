@@ -1,37 +1,43 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { APP_INITIALIZER, Injectable, Provider, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ACLService } from '@yelon/acl';
 import { YUNZAI_I18N_TOKEN, MenuService, SettingsService, TitleService } from '@yelon/theme';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
-import { NzIconService } from 'ng-zorro-antd/icon';
 import { Observable, zip, catchError, map } from 'rxjs';
 
-import { ICONS } from '../../../style-icons';
-import { ICONS_AUTO } from '../../../style-icons-auto';
 import { I18NService } from '../i18n/i18n.service';
 
 /**
  * Used for application startup
  * Generally used to get the basic data of the application, like: Menu Data, User Data, etc.
  */
+export function provideStartup(): Provider[] {
+  return [
+    StartupService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (startupService: StartupService) => () => startupService.load(),
+      deps: [StartupService],
+      multi: true
+    }
+  ];
+}
+
 @Injectable()
 export class StartupService {
-  constructor(
-    iconSrv: NzIconService,
-    private menuService: MenuService,
-    @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService,
-    private settingService: SettingsService,
-    private aclService: ACLService,
-    private titleService: TitleService,
-    private httpClient: HttpClient,
-    private router: Router
-  ) {
-    iconSrv.addIcon(...ICONS_AUTO, ...ICONS);
-  }
+  private menuService = inject(MenuService);
+  private settingService = inject(SettingsService);
+  private aclService = inject(ACLService);
+  private titleService = inject(TitleService);
+  private httpClient = inject(HttpClient);
+  private router = inject(Router);
+  private i18n = inject<I18NService>(YUNZAI_I18N_TOKEN);
 
   load(): Observable<void> {
     const defaultLang = this.i18n.defaultLang;
+    // If http request allows anonymous access, you need to add `ALLOW_ANONYMOUS`:
+    // this.httpClient.get('assets/tmp/app-data.json', { context: new HttpContext().set(ALLOW_ANONYMOUS, true) })
     return zip(this.i18n.loadLangData(defaultLang), this.httpClient.get('assets/tmp/app-data.json')).pipe(
       // 接收其他拦截器后产生的异常消息
       catchError(res => {

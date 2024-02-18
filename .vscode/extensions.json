@@ -1,5 +1,4 @@
 {
-  "recommendations": [
-    "yunzai-bot.ng-yunzai-extension-pack"
-  ]
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
+  "recommendations": ["yunzai-bot.ng-yunzai-extension-pack"]
 }

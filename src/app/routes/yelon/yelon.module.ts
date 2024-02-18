@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '@shared';
 import { DownFileModule } from '@yelon/abc/down-file';
 import { FullContentModule } from '@yelon/abc/full-content';
 import { QRModule } from '@yelon/abc/qr';
 import { G2MiniBarModule } from '@yelon/chart/mini-bar';
+import { SharedModule } from '@shared';
 
 import { ACLComponent } from './acl/acl.component';
 import { CacheComponent } from './cache/cache.component';
+import { YelonRoutingModule } from './yelon-routing.module';
 import { DownFileComponent } from './downfile/downfile.component';
 import { YelonFormComponent } from './form/form.component';
 import { GuardAdminComponent } from './guard/admin.component';
@@ -18,7 +19,6 @@ import { QRComponent } from './qr/qr.component';
 import { STDemoComponent } from './st/st.component';
 import { UtilComponent } from './util/util.component';
 import { XlsxComponent } from './xlsx/xlsx.component';
-import { YelonRoutingModule } from './yelon-routing.module';
 import { ZipComponent } from './zip/zip.component';
 
 const COMPONENTS = [

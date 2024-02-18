@@ -1,13 +1,17 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { YA_SERVICE_TOKEN, ITokenService } from '@yelon/auth';
-import { SettingsService, User } from '@yelon/theme';
+import { YA_SERVICE_TOKEN } from '@yelon/auth';
+import { I18nPipe, SettingsService, User } from '@yelon/theme';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 @Component({
   selector: 'header-user',
   template: `
     <div class="yunzai-default__nav-item d-flex align-items-center px-sm" nz-dropdown nzPlacement="bottomRight" [nzDropdownMenu]="userMenu">
-      <nz-avatar [nzSrc]="user.avatar" nzSize="small" class="mr-sm"></nz-avatar>
+      <nz-avatar [nzSrc]="user.avatar" nzSize="small" class="mr-sm" />
       {{ user.name }}
     </div>
     <nz-dropdown-menu #userMenu="nzDropdownMenu">
@@ -32,18 +36,17 @@ import { SettingsService, User } from '@yelon/theme';
       </div>
     </nz-dropdown-menu>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NzDropDownModule, NzMenuModule, NzIconModule, I18nPipe, NzAvatarModule]
 })
 export class HeaderUserComponent {
+  private readonly settings = inject(SettingsService);
+  private readonly router = inject(Router);
+  private readonly tokenService = inject(YA_SERVICE_TOKEN);
   get user(): User {
     return this.settings.user;
   }
-
-  constructor(
-    private settings: SettingsService,
-    private router: Router,
-    @Inject(YA_SERVICE_TOKEN) private tokenService: ITokenService
-  ) {}
 
   logout(): void {
     this.tokenService.clear();

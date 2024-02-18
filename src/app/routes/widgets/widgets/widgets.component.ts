@@ -1,15 +1,24 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { G2MiniBarData } from '@yelon/chart/mini-bar';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { G2MiniAreaModule } from '@yelon/chart/mini-area';
+import { G2MiniBarData, G2MiniBarModule } from '@yelon/chart/mini-bar';
 import { _HttpClient } from '@yelon/theme';
+import { SHARED_IMPORTS } from '@shared';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-widgets',
   templateUrl: './widgets.component.html',
   styleUrls: ['./widgets.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [...SHARED_IMPORTS, NzCarouselModule, G2MiniBarModule, G2MiniAreaModule]
 })
 export class WidgetsComponent implements OnInit {
+  readonly msg = inject(NzMessageService);
+  private readonly http = inject(_HttpClient);
+  private readonly cdr = inject(ChangeDetectorRef);
+
   data: G2MiniBarData[] = [];
   smallData: G2MiniBarData[] = [];
   todoData: Array<{ completed: boolean; avatar: string; name: string; content: string }> = [
@@ -28,7 +37,7 @@ export class WidgetsComponent implements OnInit {
     {
       completed: false,
       avatar: '3',
-      name: 'devcui',
+      name: 'yunzai-bot',
       content: `this world was never meant for one as beautiful as you.`
     },
     {
@@ -52,12 +61,6 @@ export class WidgetsComponent implements OnInit {
   ];
   like = false;
   dislike = false;
-
-  constructor(
-    public msg: NzMessageService,
-    private http: _HttpClient,
-    private cdr: ChangeDetectorRef
-  ) {}
 
   ngOnInit(): void {
     this.http.get('/chart/visit').subscribe((res: G2MiniBarData[]) => {

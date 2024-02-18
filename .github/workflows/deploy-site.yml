@@ -28,13 +28,13 @@ jobs:
           login: ${{ secrets.SURGE_LOGIN }}
           token: ${{ secrets.SURGE_TOKEN }}
           domain: https://ng-yunzai.surge.sh
-          project: ./dist
+          project: ./dist/browser
 
       - name: Replace base href for gh-pages
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: '<base href="/">'
-          replace: '<base href="/ng-yunzai">'
+          replace: '<base href="/ng-yunzai/">'
           include: '*.html'
           regex: false
 
@@ -44,6 +44,6 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./dist
+          PUBLISH_DIR: ./dist/browser
         with:
           emptyCommits: false

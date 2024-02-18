@@ -1,17 +1,30 @@
 import { Platform } from '@angular/cdk/platform';
 import { DOCUMENT } from '@angular/common';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import type { Chart } from '@antv/g2';
-import { OnboardingService } from '@yelon/abc/onboarding';
+import { SHARED_IMPORTS } from '@shared';
+import { OnboardingModule, OnboardingService } from '@yelon/abc/onboarding';
+import { QuickMenuModule } from '@yelon/abc/quick-menu';
+import { G2BarModule } from '@yelon/chart/bar';
+import { G2MiniBarModule } from '@yelon/chart/mini-bar';
+import { G2TimelineModule } from '@yelon/chart/timeline';
 import { _HttpClient } from '@yelon/theme';
-import { NzSafeAny } from 'ng-zorro-antd/core/types';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-v1',
   templateUrl: './v1.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [...SHARED_IMPORTS, G2TimelineModule, G2BarModule, G2MiniBarModule, QuickMenuModule, OnboardingModule]
 })
 export class DashboardV1Component implements OnInit {
+  private readonly http = inject(_HttpClient);
+  private readonly cdr = inject(ChangeDetectorRef);
+  private readonly obSrv = inject(OnboardingService);
+  private readonly platform = inject(Platform);
+  private readonly doc = inject(DOCUMENT);
   todoData = [
     {
       completed: true,
@@ -28,7 +41,7 @@ export class DashboardV1Component implements OnInit {
     {
       completed: false,
       avatar: '3',
-      name: 'devcui',
+      name: 'yunzai-bot',
       content: `this world was never meant for one as beautiful as you.`
     },
     {
@@ -55,15 +68,10 @@ export class DashboardV1Component implements OnInit {
   salesData!: any[];
   offlineChartData!: any[];
 
-  constructor(
-    private http: _HttpClient,
-    private cdr: ChangeDetectorRef,
-    private obSrv: OnboardingService,
-    private platform: Platform,
-    @Inject(DOCUMENT) private doc: NzSafeAny
-  ) {
-    // TODO: Wait for the page to load
-    setTimeout(() => this.genOnboarding(), 1000);
+  constructor() {
+    timer(1000)
+      .pipe(takeUntilDestroyed())
+      .subscribe(() => this.genOnboarding());
   }
 
   fixDark(chart: Chart): void {

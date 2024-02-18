@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '@shared';
 import { AvatarListModule } from '@yelon/abc/avatar-list';
 import { EllipsisModule } from '@yelon/abc/ellipsis';
 import { FooterToolbarModule } from '@yelon/abc/footer-toolbar';
+import { ResultModule } from '@yelon/abc/result';
 import { TagSelectModule } from '@yelon/abc/tag-select';
 import { CurrencyPipeModule } from '@yelon/util/pipes/currency';
+import { SharedModule } from '@shared';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzStepsModule } from 'ng-zorro-antd/steps';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 import { ProAccountCenterApplicationsComponent } from './account/center/applications/applications.component';
 import { ProAccountCenterArticlesComponent } from './account/center/articles/articles.component';
@@ -77,7 +79,9 @@ const COMPONENTS = [
     FooterToolbarModule,
     NzPaginationModule,
     NzStepsModule,
-    CurrencyPipeModule
+    CurrencyPipeModule,
+    ResultModule,
+    NzUploadModule
   ],
   declarations: COMPONENTS
 })

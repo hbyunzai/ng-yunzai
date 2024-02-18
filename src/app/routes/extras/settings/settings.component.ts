@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
@@ -7,8 +7,10 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   templateUrl: './settings.component.html'
 })
 export class ExtrasSettingsComponent implements OnInit {
+  readonly msg = inject(NzMessageService);
+
   active = 1;
-  profileForm = this.fb.nonNullable.group({
+  profileForm = inject(FormBuilder).nonNullable.group({
     name: ['', Validators.compose([Validators.required, Validators.pattern(`^[-_a-zA-Z0-9]{4,20}$`)])],
     email: '',
     bio: ['', Validators.maxLength(160)],
@@ -22,12 +24,7 @@ export class ExtrasSettingsComponent implements OnInit {
     confirm_new_password: ''
   };
   // Email
-  primary_email = 'devcui@outlook.com';
-
-  constructor(
-    private fb: FormBuilder,
-    public msg: NzMessageService
-  ) {}
+  primary_email = 'yunzai-bot@outlook.com';
 
   profileSave(value: any): void {
     console.log('profile value', value);
@@ -51,8 +48,8 @@ export class ExtrasSettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.profileForm.patchValue({
-      name: 'devcui',
-      email: 'devcui@outlook.com'
+      name: 'yunzai-bot',
+      email: 'yunzai-bot@outlook.com'
     });
   }
 }

@@ -1,13 +1,20 @@
 import { HttpContext } from '@angular/common/http';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, Optional } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { StartupService } from '@core';
-import { environment } from '@env/environment';
 import { ReuseTabService } from '@yelon/abc/reuse-tab';
-import { ALLOW_ANONYMOUS, YA_SERVICE_TOKEN, ITokenService, SocialOpenType, SocialService } from '@yelon/auth';
-import { SettingsService, _HttpClient } from '@yelon/theme';
-import { NzTabChangeEvent } from 'ng-zorro-antd/tabs';
+import { ALLOW_ANONYMOUS, YA_SERVICE_TOKEN, SocialOpenType, SocialService } from '@yelon/auth';
+import { I18nPipe, SettingsService, _HttpClient } from '@yelon/theme';
+import { environment } from '@env/environment';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzTabChangeEvent, NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { finalize } from 'rxjs';
 
 @Component({
@@ -15,28 +22,35 @@ import { finalize } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.less'],
   providers: [SocialService],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    RouterLink,
+    ReactiveFormsModule,
+    I18nPipe,
+    NzCheckboxModule,
+    NzTabsModule,
+    NzAlertModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+    NzToolTipModule,
+    NzIconModule
+  ]
 })
 export class UserLoginComponent implements OnDestroy {
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private settingsService: SettingsService,
-    private socialService: SocialService,
-    @Optional()
-    @Inject(ReuseTabService)
-    private reuseTabService: ReuseTabService,
-    @Inject(YA_SERVICE_TOKEN) private tokenService: ITokenService,
-    private startupSrv: StartupService,
-    private http: _HttpClient,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private readonly router = inject(Router);
+  private readonly settingsService = inject(SettingsService);
+  private readonly socialService = inject(SocialService);
+  private readonly reuseTabService = inject(ReuseTabService, { optional: true });
+  private readonly tokenService = inject(YA_SERVICE_TOKEN);
+  private readonly startupSrv = inject(StartupService);
+  private readonly http = inject(_HttpClient);
+  private readonly cdr = inject(ChangeDetectorRef);
 
-  // #region fields
-
-  form = this.fb.nonNullable.group({
+  form = inject(FormBuilder).nonNullable.group({
     userName: ['', [Validators.required, Validators.pattern(/^(admin|user)$/)]],
-    password: ['', [Validators.required, Validators.pattern(/^(ng\-yunzai\.com)$/)]],
+    password: ['', [Validators.required, Validators.pattern(/^(ng\.yunzainfo\.com)$/)]],
     mobile: ['', [Validators.required, Validators.pattern(/^1\d{10}$/)]],
     captcha: ['', [Validators.required]],
     remember: [true]
@@ -45,12 +59,8 @@ export class UserLoginComponent implements OnDestroy {
   type = 0;
   loading = false;
 
-  // #region get captcha
-
   count = 0;
   interval$: any;
-
-  // #endregion
 
   switch({ index }: NzTabChangeEvent): void {
     this.type = index!;
@@ -71,8 +81,6 @@ export class UserLoginComponent implements OnDestroy {
       }
     }, 1000);
   }
-
-  // #endregion
 
   submit(): void {
     this.error = '';
@@ -126,7 +134,7 @@ export class UserLoginComponent implements OnDestroy {
           return;
         }
         // 清空路由复用信息
-        this.reuseTabService.clear();
+        this.reuseTabService?.clear();
         // 设置用户Token信息
         // TODO: Mock expired value
         res.user.expired = +new Date() + 1000 * 60 * 5;
@@ -142,8 +150,6 @@ export class UserLoginComponent implements OnDestroy {
       });
   }
 
-  // #region social
-
   open(type: string, openType: SocialOpenType = 'href'): void {
     let url = ``;
     let callback = ``;
@@ -154,7 +160,7 @@ export class UserLoginComponent implements OnDestroy {
     }
     switch (type) {
       case 'auth0':
-        url = `//devcui.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
+        url = `//yunzai-bot.auth0.com/login?client=8gcNydIDzGBYxzqV0Vm1CX_RXH-wsWo5&redirect_uri=${decodeURIComponent(callback)}`;
         break;
       case 'github':
         url = `//github.com/login/oauth/authorize?client_id=9d6baae4b04a23fcafa2&response_type=code&redirect_uri=${decodeURIComponent(
@@ -182,8 +188,6 @@ export class UserLoginComponent implements OnDestroy {
       });
     }
   }
-
-  // #endregion
 
   ngOnDestroy(): void {
     if (this.interval$) {

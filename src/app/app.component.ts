@@ -1,22 +1,24 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
-import { NavigationEnd, NavigationError, RouteConfigLoadStart, Router } from '@angular/router';
+import { Component, ElementRef, OnInit, Renderer2, inject } from '@angular/core';
+import { NavigationEnd, NavigationError, RouteConfigLoadStart, Router, RouterOutlet } from '@angular/router';
+import { TitleService, VERSION as VERSION_YUNZAI, stepPreloader } from '@yelon/theme';
 import { environment } from '@env/environment';
-import { TitleService, VERSION as VERSION_YUNZAI } from '@yelon/theme';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { VERSION as VERSION_ZORRO } from 'ng-zorro-antd/version';
 
 @Component({
   selector: 'app-root',
-  template: ` <router-outlet></router-outlet> `
+  template: ` <router-outlet />`,
+  standalone: true,
+  imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
-  constructor(
-    el: ElementRef,
-    renderer: Renderer2,
-    private router: Router,
-    private titleSrv: TitleService,
-    private modalSrv: NzModalService
-  ) {
+  private readonly router = inject(Router);
+  private readonly titleSrv = inject(TitleService);
+  private readonly modalSrv = inject(NzModalService);
+
+  private donePreloader = stepPreloader();
+
+  constructor(el: ElementRef, renderer: Renderer2) {
     renderer.setAttribute(el.nativeElement, 'ng-yunzai-version', VERSION_YUNZAI.full);
     renderer.setAttribute(el.nativeElement, 'ng-zorro-version', VERSION_ZORRO.full);
   }
@@ -38,6 +40,7 @@ export class AppComponent implements OnInit {
         });
       }
       if (ev instanceof NavigationEnd) {
+        this.donePreloader();
         this.titleSrv.setTitle();
         this.modalSrv.closeAll();
       }

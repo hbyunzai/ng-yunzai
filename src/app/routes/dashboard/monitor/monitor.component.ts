@@ -1,6 +1,13 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { CountDownModule } from '@yelon/abc/count-down';
+import { G2GaugeModule } from '@yelon/chart/gauge';
+import { G2MiniAreaModule } from '@yelon/chart/mini-area';
+import { NumberInfoModule } from '@yelon/chart/number-info';
+import { G2PieModule } from '@yelon/chart/pie';
+import { G2TagCloudModule } from '@yelon/chart/tag-cloud';
+import { G2WaterWaveModule } from '@yelon/chart/water-wave';
 import { _HttpClient } from '@yelon/theme';
-import { NzMessageService } from 'ng-zorro-antd/message';
+import { SHARED_IMPORTS } from '@shared';
 import type { CountdownConfig } from 'ngx-countdown';
 import { zip } from 'rxjs';
 
@@ -8,14 +15,23 @@ import { zip } from 'rxjs';
   selector: 'app-dashboard-monitor',
   templateUrl: './monitor.component.html',
   styleUrls: ['./monitor.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    ...SHARED_IMPORTS,
+    G2WaterWaveModule,
+    G2TagCloudModule,
+    G2PieModule,
+    G2GaugeModule,
+    G2MiniAreaModule,
+    NumberInfoModule,
+    CountDownModule
+  ]
 })
 export class DashboardMonitorComponent implements OnInit, OnDestroy {
-  constructor(
-    private http: _HttpClient,
-    public msg: NzMessageService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private readonly http = inject(_HttpClient);
+  private readonly cdr = inject(ChangeDetectorRef);
+
   data: any = {};
   tags = [];
   loading = true;

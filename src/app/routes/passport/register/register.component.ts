@@ -1,30 +1,49 @@
 import { HttpContext } from '@angular/common/http';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, inject } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { ALLOW_ANONYMOUS } from '@yelon/auth';
-import { _HttpClient } from '@yelon/theme';
+import { I18nPipe, _HttpClient } from '@yelon/theme';
 import { MatchControl } from '@yelon/util/form';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzSelectModule } from 'ng-zorro-antd/select';
 import { finalize } from 'rxjs';
 
 @Component({
   selector: 'passport-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    I18nPipe,
+    RouterLink,
+    NzAlertModule,
+    NzFormModule,
+    NzInputModule,
+    NzPopoverModule,
+    NzProgressModule,
+    NzSelectModule,
+    NzGridModule,
+    NzButtonModule
+  ]
 })
 export class UserRegisterComponent implements OnDestroy {
-  constructor(
-    private fb: FormBuilder,
-    private router: Router,
-    private http: _HttpClient,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private readonly router = inject(Router);
+  private readonly http = inject(_HttpClient);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   // #region fields
 
-  form = this.fb.nonNullable.group(
+  form = inject(FormBuilder).nonNullable.group(
     {
       mail: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), UserRegisterComponent.checkPassword.bind(this)]],

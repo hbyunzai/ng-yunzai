@@ -1,10 +1,19 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
-import { I18NService } from '@core';
-import { yuan } from '@shared';
+import { DecimalPipe } from '@angular/common';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { STColumn } from '@yelon/abc/st';
+import { G2BarModule } from '@yelon/chart/bar';
+import { G2CardModule } from '@yelon/chart/card';
+import { G2MiniAreaModule } from '@yelon/chart/mini-area';
+import { G2MiniBarModule } from '@yelon/chart/mini-bar';
+import { G2MiniProgressModule } from '@yelon/chart/mini-progress';
+import { NumberInfoModule } from '@yelon/chart/number-info';
+import { G2PieModule } from '@yelon/chart/pie';
+import { G2TimelineModule } from '@yelon/chart/timeline';
+import { TrendModule } from '@yelon/chart/trend';
 import { YUNZAI_I18N_TOKEN, _HttpClient } from '@yelon/theme';
 import { getTimeDistance } from '@yelon/util/date-time';
 import { deepCopy } from '@yelon/util/other';
+import { SHARED_IMPORTS, yuan } from '@shared';
 import type { NzSafeAny } from 'ng-zorro-antd/core/types';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
@@ -12,15 +21,28 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   selector: 'app-dashboard-analysis',
   templateUrl: './analysis.component.html',
   styleUrls: ['./analysis.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    ...SHARED_IMPORTS,
+    G2TimelineModule,
+    G2PieModule,
+    NumberInfoModule,
+    TrendModule,
+    G2MiniAreaModule,
+    DecimalPipe,
+    G2BarModule,
+    G2MiniProgressModule,
+    G2CardModule,
+    G2MiniBarModule
+  ]
 })
 export class DashboardAnalysisComponent implements OnInit {
-  constructor(
-    private http: _HttpClient,
-    public msg: NzMessageService,
-    @Inject(YUNZAI_I18N_TOKEN) private i18n: I18NService,
-    private cdr: ChangeDetectorRef
-  ) {}
+  private readonly http = inject(_HttpClient);
+  readonly msg = inject(NzMessageService);
+  private readonly i18n = inject(YUNZAI_I18N_TOKEN);
+  private readonly cdr = inject(ChangeDetectorRef);
+
   data: any = {};
   loading = true;
   dateRange: Date[] = [];
