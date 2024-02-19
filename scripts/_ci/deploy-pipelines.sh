@@ -60,3 +60,5 @@ cp -rf ${ROOT_DIR}/CNAME ${DIST_DIR}/CNAME
 cp -f ${DIST_DIR}/browser/index.html ${DIST_DIR}/browser/404.html
 
 echo "Finished"
+
+
