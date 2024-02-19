@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - 'publish-**'
-      - 'release-**'
 
 jobs:
   build-and-deploy:
