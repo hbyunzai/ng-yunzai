@@ -55,6 +55,8 @@ else
   node --max_old_space_size=5120 ./node_modules/@angular/cli/bin/ng build
 fi
 
+cp -rf ${ROOT_DIR}/CNAME ${DIST_DIR}/CNAME
+
 cp -f ${DIST_DIR}/browser/index.html ${DIST_DIR}/browser/404.html
 
 echo "Finished"
