@@ -36,7 +36,7 @@ export class UserLockComponent {
       console.log('Valid!');
       console.log(this.f.value);
       this.tokenService.set({
-        token: '123'
+        access_token: '123'
       });
       this.router.navigate(['dashboard']);
     }

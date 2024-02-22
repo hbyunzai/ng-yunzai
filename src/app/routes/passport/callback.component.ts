@@ -19,7 +19,7 @@ export class CallbackComponent implements OnInit {
 
   private mockModel(): void {
     const info = {
-      token: '123456789',
+      access_token: '123456789',
       name: 'yunzai-bot',
       email: `${this.type}@${this.type}.com`,
       id: 10000,

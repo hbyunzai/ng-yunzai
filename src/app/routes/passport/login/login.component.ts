@@ -3,10 +3,10 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, injec
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { StartupService } from '@core';
+import { environment } from '@env/environment';
 import { ReuseTabService } from '@yelon/abc/reuse-tab';
 import { ALLOW_ANONYMOUS, YA_SERVICE_TOKEN, SocialOpenType, SocialService } from '@yelon/auth';
 import { I18nPipe, SettingsService, _HttpClient } from '@yelon/theme';
-import { environment } from '@env/environment';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
@@ -137,7 +137,7 @@ export class UserLoginComponent implements OnDestroy {
         this.reuseTabService?.clear();
         // 设置用户Token信息
         // TODO: Mock expired value
-        res.user.expired = +new Date() + 1000 * 60 * 5;
+        res.user.expires_in = +new Date() + 1000 * 60 * 5;
         this.tokenService.set(res.user);
         // 重新获取 StartupService 内容，我们始终认为应用信息一般都会受当前用户授权范围而影响
         this.startupSrv.load().subscribe(() => {

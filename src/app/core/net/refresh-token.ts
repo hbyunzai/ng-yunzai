@@ -14,7 +14,8 @@ let refreshToken$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
  * > 由于已经发起的请求，不会再走一遍 `@yelon/auth` 因此需要结合业务情况重新附加新的 Token
  */
 function reAttachToken(injector: Injector, req: HttpRequest<any>): HttpRequest<any> {
-  const token = injector.get(YA_SERVICE_TOKEN).get()?.token;
+  // eslint-disable-next-line prettier/prettier
+  const token = injector.get(YA_SERVICE_TOKEN).get()?.access_token;
   return req.clone({
     setHeaders: {
       token: `Bearer ${token}`
@@ -80,7 +81,7 @@ function buildAuthRefresh(injector: Injector) {
     .subscribe({
       next: res => {
         // TODO: Mock expired value
-        res.expired = +new Date() + 1000 * 60 * 5;
+        res.expires_in = +new Date() + 1000 * 60 * 5;
         refreshToking = false;
         tokenSrv.set(res);
       },
