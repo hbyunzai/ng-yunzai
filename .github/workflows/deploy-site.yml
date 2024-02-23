@@ -34,7 +34,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: '<base href="/">'
-          replace: '<base href="/ng-yunzai/">'
+          replace: '<base href="/">'
           include: '*.html'
           regex: false
 
