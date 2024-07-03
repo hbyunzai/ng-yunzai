@@ -1,6 +1,6 @@
 {
   "name": "ng-yunzai",
-  "version": "17.3.2",
+  "version": "18.0.0",
   "description": "ng-zorro-antd admin panel front-end framework",
   "author": "yunzai-bot <yunzai-bot@outlook.com>",
   "repository": {
@@ -102,7 +102,7 @@
     "stylelint-config-standard": "^36.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.8.0",
     "stylelint-config-clean-order": "^6.0.0",
-    "@yelon/testing": "^18.0.1",
+    "@yelon/testing": "^18.0.0",
     "ng-yunzai": "^18.0.0",
     "@types/jasminewd2": "~2.0.13",
     "jasmine-spec-reporter": "^7.0.0",
