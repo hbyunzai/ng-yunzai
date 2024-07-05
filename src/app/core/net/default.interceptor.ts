@@ -1,7 +1,7 @@
 import { HttpErrorResponse, HttpHandlerFn, HttpInterceptorFn, HttpRequest, HttpResponseBase } from '@angular/common/http';
 import { Injector, inject } from '@angular/core';
-import { IGNORE_BASE_URL, _HttpClient } from '@yelon/theme';
 import { environment } from '@env/environment';
+import { IGNORE_BASE_URL, _HttpClient } from '@yelon/theme';
 import { Observable, of, throwError, mergeMap } from 'rxjs';
 
 import { ReThrowHttpError, checkStatus, getAdditionalHeaders, toLogin } from './helper';
@@ -48,7 +48,10 @@ function handleData(injector: Injector, ev: HttpResponseBase, req: HttpRequest<a
       break;
     default:
       if (ev instanceof HttpErrorResponse) {
-        console.warn('未可知错误，大部分是由于后端不支持跨域CORS或无效配置引起，请参考 https://ng.yunzainfo.com/docs/server 解决跨域问题', ev);
+        console.warn(
+          '未可知错误，大部分是由于后端不支持跨域CORS或无效配置引起，请参考 https://ng.yunzainfo.com/docs/server 解决跨域问题',
+          ev
+        );
       }
       break;
   }
