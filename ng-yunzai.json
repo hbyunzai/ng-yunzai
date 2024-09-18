@@ -3,13 +3,13 @@
   "theme": {
     "list": [
       {
-        "theme": "dark"
+        "key": "dark"
       },
       {
-        "theme": "compact"
+        "key": "compact"
       },
       {
-        "theme": "yuhong",
+        "key": "yuhong",
         "modifyVars": {
           "@primary-color": "#C04851",
           "@yunzai-default-header-bg": "#C04851",
@@ -32,7 +32,7 @@
         }
       },
       {
-        "theme": "danjuhuang",
+        "key": "danjuhuang",
         "modifyVars": {
           "@primary-color": "#FBA414",
           "@yunzai-default-header-bg": "#FBA414",
@@ -55,7 +55,7 @@
         }
       },
       {
-        "theme": "xinghuang",
+        "key": "xinghuang",
         "modifyVars": {
           "@primary-color": "#F28E16",
           "@yunzai-default-header-bg": "#F28E16",
@@ -78,7 +78,7 @@
         }
       },
       {
-        "theme": "shilv",
+        "key": "shilv",
         "modifyVars": {
           "@primary-color": "#57C3C2",
           "@yunzai-default-header-bg": "#57C3C2",
@@ -101,7 +101,7 @@
         }
       },
       {
-        "theme": "zhulv",
+        "key": "zhulv",
         "modifyVars": {
           "@primary-color": "#1BA784",
           "@yunzai-default-header-bg": "#1BA784",
@@ -124,7 +124,7 @@
         }
       },
       {
-        "theme": "youlan",
+        "key": "youlan",
         "modifyVars": {
           "@primary-color": "#1781B5",
           "@yunzai-default-header-bg": "#1781B5",
@@ -147,7 +147,7 @@
         }
       },
       {
-        "theme": "dianqing",
+        "key": "dianqing",
         "modifyVars": {
           "@primary-color": "#1661AB",
           "@yunzai-default-header-bg": "#1661AB",
@@ -170,7 +170,7 @@
         }
       },
       {
-        "theme": "shangengzi",
+        "key": "shangengzi",
         "modifyVars": {
           "@primary-color": "#61649F",
           "@yunzai-default-header-bg": "#61649F",
@@ -193,7 +193,7 @@
         }
       },
       {
-        "theme": "shuiniuhui",
+        "key": "shuiniuhui",
         "modifyVars": {
           "@primary-color": "#2F2F35",
           "@yunzai-default-header-bg": "#2F2F35",
