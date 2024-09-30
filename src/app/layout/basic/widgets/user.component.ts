@@ -10,7 +10,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 @Component({
   selector: 'header-user',
   template: `
-    <div class="alain-default__nav-item d-flex align-items-center px-sm" nz-dropdown nzPlacement="bottomRight" [nzDropdownMenu]="userMenu">
+    <div class="yunzai-default__nav-item d-flex yunzai-items-center px-sm" nz-dropdown nzPlacement="bottomRight" [nzDropdownMenu]="userMenu">
       <nz-avatar [nzSrc]="user.avatar" nzSize="small" class="mr-sm" />
       {{ user.name }}
     </div>
