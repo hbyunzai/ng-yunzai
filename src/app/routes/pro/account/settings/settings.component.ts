@@ -68,6 +68,12 @@ export class ProAccountSettingsComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.router.events
+      .pipe(
+        takeUntilDestroyed(this.d$),
+        filter(e => e instanceof ActivationEnd)
+      )
+      .subscribe(() => this.setActive());
     fromEvent(window, 'resize')
       .pipe(takeUntilDestroyed(this.d$), debounceTime(200))
       .subscribe(() => this.resize());
