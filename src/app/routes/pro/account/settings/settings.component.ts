@@ -38,12 +38,6 @@ export class ProAccountSettingsComponent implements AfterViewInit {
   ];
 
   constructor() {
-    this.router.events
-      .pipe(
-        takeUntilDestroyed(),
-        filter(e => e instanceof ActivationEnd)
-      )
-      .subscribe(() => this.setActive());
   }
 
   private setActive(): void {
@@ -52,6 +46,7 @@ export class ProAccountSettingsComponent implements AfterViewInit {
       i.selected = i.key === key;
     });
     this.title = this.menus.find(w => w.selected)!.title;
+    this.cdr.detectChanges();
   }
 
   to(item: { key: string }): void {
