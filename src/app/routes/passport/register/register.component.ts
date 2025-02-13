@@ -21,7 +21,6 @@ import { finalize } from 'rxjs';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [
     ReactiveFormsModule,
     I18nPipe,
@@ -62,7 +61,7 @@ export class UserRegisterComponent implements OnDestroy {
   visible = false;
   status = 'pool';
   progress = 0;
-  passwordProgressMap: { [key: string]: 'success' | 'normal' | 'exception' } = {
+  passwordProgressMap: Record<string, 'success' | 'normal' | 'exception'> = {
     ok: 'success',
     pass: 'normal',
     pool: 'exception'

@@ -1,5 +1,5 @@
 import { HttpClient, HttpHandlerFn, HttpRequest, HttpResponseBase } from '@angular/common/http';
-import { APP_INITIALIZER, Injector, Provider } from '@angular/core';
+import { EnvironmentProviders, Injector, inject, provideAppInitializer } from '@angular/core';
 import { YA_SERVICE_TOKEN } from '@yelon/auth';
 import { BehaviorSubject, Observable, catchError, filter, switchMap, take, throwError } from 'rxjs';
 
@@ -14,7 +14,6 @@ let refreshToken$: BehaviorSubject<any> = new BehaviorSubject<any>(null);
  * > 由于已经发起的请求，不会再走一遍 `@yelon/auth` 因此需要结合业务情况重新附加新的 Token
  */
 function reAttachToken(injector: Injector, req: HttpRequest<any>): HttpRequest<any> {
-  // eslint-disable-next-line prettier/prettier
   const token = injector.get(YA_SERVICE_TOKEN).get()?.access_token;
   return req.clone({
     setHeaders: {
@@ -67,7 +66,7 @@ export function tryRefreshToken(injector: Injector, ev: HttpResponseBase, req: H
   );
 }
 
-function buildAuthRefresh(injector: Injector) {
+function buildAuthRefresh(injector: Injector): void {
   const tokenSrv = injector.get(YA_SERVICE_TOKEN);
   tokenSrv.refresh
     .pipe(
@@ -92,13 +91,14 @@ function buildAuthRefresh(injector: Injector) {
 /**
  * 刷新Token方式二：使用 `@yelon/auth` 的 `refresh` 接口，需要在 `app.config.ts` 中注册 `provideBindAuthRefresh`
  */
-export function provideBindAuthRefresh(): Provider[] {
+export function provideBindAuthRefresh(): EnvironmentProviders[] {
   return [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (injector: Injector) => () => buildAuthRefresh(injector),
-      deps: [Injector],
-      multi: true
-    }
+    provideAppInitializer(() => {
+      const initializerFn = (
+        (injector: Injector) => () =>
+          buildAuthRefresh(injector)
+      )(inject(Injector));
+      return initializerFn();
+    })
   ];
 }

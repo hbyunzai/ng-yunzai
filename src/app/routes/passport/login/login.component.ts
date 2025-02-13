@@ -23,7 +23,6 @@ import { finalize } from 'rxjs';
   styleUrls: ['./login.component.less'],
   providers: [SocialService],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [
     RouterLink,
     ReactiveFormsModule,
@@ -50,7 +49,7 @@ export class UserLoginComponent implements OnDestroy {
 
   form = inject(FormBuilder).nonNullable.group({
     userName: ['', [Validators.required, Validators.pattern(/^(admin|user)$/)]],
-    password: ['', [Validators.required, Validators.pattern(/^(ng\.yunzainfo\.com)$/)]],
+    password: ['', [Validators.required, Validators.pattern(/^(ng.yunzainfo\.com)$/)]],
     mobile: ['', [Validators.required, Validators.pattern(/^1\d{10}$/)]],
     captcha: ['', [Validators.required]],
     remember: [true]

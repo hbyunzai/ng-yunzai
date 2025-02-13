@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { STColumn } from '@yelon/abc/st';
 import { _HttpClient } from '@yelon/theme';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -7,7 +8,8 @@ import { tap } from 'rxjs';
 @Component({
   selector: 'app-profile-basic',
   templateUrl: './basic.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: SHARED_IMPORTS
 })
 export class ProProfileBaseComponent {
   private readonly http = inject(_HttpClient);

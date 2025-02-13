@@ -1,5 +1,6 @@
 import { DecimalPipe } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS, yuan } from '@shared';
 import { STColumn } from '@yelon/abc/st';
 import { G2BarModule } from '@yelon/chart/bar';
 import { G2CardModule } from '@yelon/chart/card';
@@ -13,7 +14,6 @@ import { TrendModule } from '@yelon/chart/trend';
 import { YUNZAI_I18N_TOKEN, _HttpClient } from '@yelon/theme';
 import { getTimeDistance } from '@yelon/util/date-time';
 import { deepCopy } from '@yelon/util/other';
-import { SHARED_IMPORTS, yuan } from '@shared';
 import type { NzSafeAny } from 'ng-zorro-antd/core/types';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
@@ -22,7 +22,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   templateUrl: './analysis.component.html',
   styleUrls: ['./analysis.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [
     ...SHARED_IMPORTS,
     G2TimelineModule,

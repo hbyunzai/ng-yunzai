@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { CacheService } from '@yelon/cache';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-cache',
-  templateUrl: './cache.component.html'
+  templateUrl: './cache.component.html',
+  imports: SHARED_IMPORTS
 })
 export class CacheComponent {
   private readonly cache = inject(CacheService);

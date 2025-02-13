@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { G2RadarModule } from '@yelon/chart/radar';
 import { _HttpClient } from '@yelon/theme';
-import { SHARED_IMPORTS } from '@shared';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { zip } from 'rxjs';
@@ -11,7 +11,6 @@ import { zip } from 'rxjs';
   templateUrl: './workplace.component.html',
   styleUrls: ['./workplace.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [...SHARED_IMPORTS, NzAvatarModule, G2RadarModule]
 })
 export class DashboardWorkplaceComponent implements OnInit {

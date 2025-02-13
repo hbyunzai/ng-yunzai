@@ -1,4 +1,3 @@
-import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzBadgeModule } from 'ng-zorro-antd/badge';
@@ -35,7 +34,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
                 <nz-avatar [nzSrc]="'./assets/tmp/img/1.png'" />
               </div>
               <div nz-col [nzSpan]="20">
-                <strong>yunzai-bot</strong>
+                <strong>cipchk</strong>
                 <p class="mb0">Please tell me what happened in a few words, don't go into details.</p>
               </div>
             </div>
@@ -84,8 +83,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     </nz-dropdown-menu>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
-  imports: [NgTemplateOutlet, NzDropDownModule, NzBadgeModule, NzIconModule, NzSpinModule, NzGridModule, NzAvatarModule, NzCardModule]
+  imports: [NzDropDownModule, NzBadgeModule, NzIconModule, NzSpinModule, NzGridModule, NzAvatarModule, NzCardModule]
 })
 export class HeaderTaskComponent {
   private readonly cdr = inject(ChangeDetectorRef);

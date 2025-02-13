@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { STColumn } from '@yelon/abc/st';
 import { SFSchema } from '@yelon/form';
 
 @Component({
   selector: 'app-yelon-form',
-  templateUrl: './form.component.html'
+  templateUrl: './form.component.html',
+  imports: SHARED_IMPORTS
 })
 export class YelonFormComponent {
   params: any = {};

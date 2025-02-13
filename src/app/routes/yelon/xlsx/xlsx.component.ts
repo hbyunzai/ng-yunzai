@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { STColumn } from '@yelon/abc/st';
 import { XlsxService } from '@yelon/abc/xlsx';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
 
 @Component({
   selector: 'app-xlsx',
-  templateUrl: './xlsx.component.html'
+  templateUrl: './xlsx.component.html',
+  imports: SHARED_IMPORTS
 })
 export class XlsxComponent {
   private readonly xlsx = inject(XlsxService);
@@ -38,7 +40,7 @@ export class XlsxComponent {
 
   download(): void {
     const data = [this.columns.map(i => i.title)];
-    this.users.forEach((i: { [key: string]: NzSafeAny }) => data.push(this.columns.map(c => i[c.index as string])));
+    this.users.forEach((i: Record<string, NzSafeAny>) => data.push(this.columns.map(c => i[c.index as string])));
     this.xlsx.export({
       sheets: [
         {

@@ -1,11 +1,13 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { _HttpClient } from '@yelon/theme';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-extras-poi-edit',
-  templateUrl: './edit.component.html'
+  templateUrl: './edit.component.html',
+  imports: SHARED_IMPORTS
 })
 export class ExtrasPoiEditComponent implements OnInit {
   readonly msgSrv = inject(NzMessageService);

@@ -1,12 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
+import { FullContentModule } from '@yelon/abc/full-content';
 import { STColumn } from '@yelon/abc/st';
-import { G2MiniBarData } from '@yelon/chart/mini-bar';
+import { G2MiniBarComponent, G2MiniBarData } from '@yelon/chart/mini-bar';
 import { _HttpClient } from '@yelon/theme';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-st',
-  templateUrl: './st.component.html'
+  templateUrl: './st.component.html',
+  imports: [...SHARED_IMPORTS, FullContentModule, G2MiniBarComponent]
 })
 export class STDemoComponent implements OnInit {
   readonly http = inject(_HttpClient);

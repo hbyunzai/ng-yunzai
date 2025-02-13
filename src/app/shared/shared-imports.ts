@@ -1,6 +1,6 @@
-import { NgClass, NgStyle, NgTemplateOutlet } from '@angular/common';
+import { AsyncPipe, JsonPipe, NgClass, NgStyle, NgTemplateOutlet } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { DatePipe, I18nPipe } from '@yelon/theme';
 
 import { SHARED_YELON_MODULES } from './shared-yelon.module';
@@ -10,11 +10,14 @@ export const SHARED_IMPORTS = [
   FormsModule,
   ReactiveFormsModule,
   RouterLink,
+  RouterOutlet,
   NgTemplateOutlet,
   NgClass,
   NgStyle,
   I18nPipe,
+  JsonPipe,
   DatePipe,
+  AsyncPipe,
   ...SHARED_YELON_MODULES,
   ...SHARED_ZORRO_MODULES
 ];

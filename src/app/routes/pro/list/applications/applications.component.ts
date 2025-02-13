@@ -1,4 +1,7 @@
+import { DecimalPipe } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
+import { TagSelectComponent } from '@yelon/abc/tag-select';
 import { _HttpClient } from '@yelon/theme';
 
 interface ProListApplicationListItem {
@@ -12,7 +15,8 @@ interface ProListApplicationListItem {
   selector: 'app-list-applications',
   templateUrl: './applications.component.html',
   styleUrls: ['./applications.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [...SHARED_IMPORTS, TagSelectComponent, DecimalPipe]
 })
 export class ProListApplicationsComponent implements OnInit {
   private readonly http = inject(_HttpClient);

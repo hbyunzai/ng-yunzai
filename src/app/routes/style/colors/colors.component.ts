@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { copy } from '@yelon/util/browser';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
@@ -7,7 +8,8 @@ import { ColorService } from '../color.service';
 @Component({
   selector: 'app-colors',
   templateUrl: './colors.component.html',
-  styleUrls: ['./colors.component.less']
+  styleUrls: ['./colors.component.less'],
+  imports: SHARED_IMPORTS
 })
 export class ColorsComponent {
   private readonly colorSrv = inject(ColorService);

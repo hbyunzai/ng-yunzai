@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, TemplateRef, ViewChild, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { STChange, STColumn, STComponent, STData } from '@yelon/abc/st';
 import { _HttpClient } from '@yelon/theme';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
@@ -9,7 +10,8 @@ import { map, tap } from 'rxjs';
 @Component({
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: SHARED_IMPORTS
 })
 export class ProTableListComponent implements OnInit {
   private readonly http = inject(_HttpClient);
@@ -150,7 +152,7 @@ export class ProTableListComponent implements OnInit {
     this.msg.success(`审批了 ${this.selectedRows.length} 笔`);
   }
 
-  add(tpl: TemplateRef<{}>): void {
+  add(tpl: TemplateRef<unknown>): void {
     this.modalSrv.create({
       nzTitle: '新建规则',
       nzContent: tpl,

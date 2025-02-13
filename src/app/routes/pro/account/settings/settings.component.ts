@@ -1,7 +1,7 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, ElementRef, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivationEnd, Router } from '@angular/router';
-import { _HttpClient } from '@yelon/theme';
+import { SHARED_IMPORTS } from '@shared';
 import { NzMenuModeType } from 'ng-zorro-antd/menu';
 import { fromEvent, debounceTime, filter } from 'rxjs';
 
@@ -9,7 +9,8 @@ import { fromEvent, debounceTime, filter } from 'rxjs';
   selector: 'app-account-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: SHARED_IMPORTS
 })
 export class ProAccountSettingsComponent implements AfterViewInit {
   private readonly router = inject(Router);
@@ -36,9 +37,6 @@ export class ProAccountSettingsComponent implements AfterViewInit {
       title: '新消息通知'
     }
   ];
-
-  constructor() {
-  }
 
   private setActive(): void {
     const key = this.router.url.substring(this.router.url.lastIndexOf('/') + 1);
@@ -74,9 +72,11 @@ export class ProAccountSettingsComponent implements AfterViewInit {
         filter(e => e instanceof ActivationEnd)
       )
       .subscribe(() => this.setActive());
+
     fromEvent(window, 'resize')
       .pipe(takeUntilDestroyed(this.d$), debounceTime(200))
       .subscribe(() => this.resize());
+
     this.setActive();
   }
 }

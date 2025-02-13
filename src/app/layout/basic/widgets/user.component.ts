@@ -10,7 +10,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 @Component({
   selector: 'header-user',
   template: `
-    <div class="yunzai-default__nav-item d-flex yunzai-items-center px-sm" nz-dropdown nzPlacement="bottomRight" [nzDropdownMenu]="userMenu">
+    <div class="yunzai-default__nav-item d-flex align-items-center px-sm" nz-dropdown nzPlacement="bottomRight" [nzDropdownMenu]="userMenu">
       <nz-avatar [nzSrc]="user.avatar" nzSize="small" class="mr-sm" />
       {{ user.name }}
     </div>
@@ -37,14 +37,12 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
     </nz-dropdown-menu>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [RouterLink, NzDropDownModule, NzMenuModule, NzIconModule, I18nPipe, NzAvatarModule]
 })
 export class HeaderUserComponent {
   private readonly settings = inject(SettingsService);
   private readonly router = inject(Router);
   private readonly tokenService = inject(YA_SERVICE_TOKEN);
-
   get user(): User {
     return this.settings.user;
   }

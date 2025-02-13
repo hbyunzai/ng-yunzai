@@ -51,7 +51,7 @@ export const USERS = {
   '/user/:id': (req: MockRequest) => list.find(w => w.id === +req.params.id),
   'POST /user/:id': (req: MockRequest) => saveData(+req.params.id, req.body),
   '/user/current': {
-    name: 'Cipchk',
+    name: 'Yunzai-bot',
     avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
     userid: '00000001',
     email: 'yunzai-bot@outlook.com',

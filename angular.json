@@ -155,7 +155,7 @@
       "@schematics/angular",
       "ng-yunzai"
     ],
-    "analytics": false
+    "analytics": "4e482ff5-d0ca-4ebd-9253-9a6b67a0b4cd"
   },
   "schematics": {
     "@angular-eslint/schematics:application": {

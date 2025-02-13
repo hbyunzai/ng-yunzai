@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { Lodop, LodopService } from '@yelon/abc/lodop';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
   selector: 'app-print',
-  templateUrl: './print.component.html'
+  templateUrl: './print.component.html',
+  imports: SHARED_IMPORTS
 })
 export class PrintComponent {
   private readonly lodopSrv = inject(LodopService);
@@ -62,7 +64,7 @@ export class PrintComponent {
     }
     this.papers = this.lodop.GET_PAGESIZES_LIST(name, '\n').split('\n');
   }
-  print(isPrivew: boolean = false): void {
+  print(isPrivew = false): void {
     const LODOP = this.lodop as Lodop;
     LODOP.PRINT_INITA(10, 20, 810, 610, '测试C-Lodop远程打印四步骤');
     LODOP.SET_PRINTER_INDEXA(this.cog.printer);

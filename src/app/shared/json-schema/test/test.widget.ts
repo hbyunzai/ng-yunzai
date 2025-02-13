@@ -10,7 +10,6 @@ import { ControlWidget, YelonFormModule } from '@yelon/form';
   `,
   preserveWhitespaces: false,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [YelonFormModule]
 })
 export class TestWidget extends ControlWidget implements OnInit {

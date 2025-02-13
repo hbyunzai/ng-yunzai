@@ -11,21 +11,21 @@ import {
   withViewTransitions
 } from '@angular/router';
 import { I18NService, defaultInterceptor, provideBindAuthRefresh, provideStartup } from '@core';
+import { environment } from '@env/environment';
+import { CELL_WIDGETS, SF_WIDGETS, ST_WIDGETS } from '@shared';
 import { provideCellWidgets } from '@yelon/abc/cell';
 import { provideSTWidgets } from '@yelon/abc/st';
 import { authSimpleInterceptor, provideAuth } from '@yelon/auth';
 import { provideSFConfig } from '@yelon/form';
 import { YunzaiProvideLang, provideYunzai, zh_CN as yelonLang } from '@yelon/theme';
 import { YunzaiConfig } from '@yelon/util/config';
-import { environment } from '@env/environment';
-import { CELL_WIDGETS, SF_WIDGETS, ST_WIDGETS } from '@shared';
 import { zhCN as dateLang } from 'date-fns/locale';
 import { NzConfig, provideNzConfig } from 'ng-zorro-antd/core/config';
 import { zh_CN as zorroLang } from 'ng-zorro-antd/i18n';
 
-import { routes } from './routes/routes';
 import { ICONS } from '../style-icons';
 import { ICONS_AUTO } from '../style-icons-auto';
+import { routes } from './routes/routes';
 
 const defaultLang: YunzaiProvideLang = {
   abbr: 'zh-CN',

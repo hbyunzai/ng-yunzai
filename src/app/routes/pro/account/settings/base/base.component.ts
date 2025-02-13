@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { _HttpClient } from '@yelon/theme';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzUploadComponent } from 'ng-zorro-antd/upload';
 import { zip } from 'rxjs';
 
 interface ProAccountSettingsUser {
@@ -30,7 +32,8 @@ interface ProAccountSettingsCity {
   selector: 'app-account-settings-base',
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [...SHARED_IMPORTS, NzUploadComponent]
 })
 export class ProAccountSettingsBaseComponent implements OnInit {
   private readonly http = inject(_HttpClient);
@@ -58,7 +61,7 @@ export class ProAccountSettingsBaseComponent implements OnInit {
     );
   }
 
-  choProvince(pid: string, cleanCity: boolean = true): void {
+  choProvince(pid: string, cleanCity = true): void {
     this.http.get(`/geo/${pid}`).subscribe(res => {
       this.cities = res;
       if (cleanCity) {

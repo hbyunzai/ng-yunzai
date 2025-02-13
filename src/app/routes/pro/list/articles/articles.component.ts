@@ -1,10 +1,13 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
+import { TagSelectComponent } from '@yelon/abc/tag-select';
 import { _HttpClient } from '@yelon/theme';
 
 @Component({
   selector: 'app-list-articles',
   templateUrl: './articles.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [...SHARED_IMPORTS, TagSelectComponent]
 })
 export class ProListArticlesComponent implements OnInit {
   private readonly http = inject(_HttpClient);
@@ -78,7 +81,7 @@ export class ProListArticlesComponent implements OnInit {
     this.getData();
   }
 
-  getData(more: boolean = false): void {
+  getData(more = false): void {
     this.loading = true;
     this.http.get('/api/list', { count: this.q.ps }).subscribe(res => {
       this.list = more ? this.list.concat(res) : res;

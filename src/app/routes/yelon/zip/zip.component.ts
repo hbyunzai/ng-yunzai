@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { ZipService } from '@yelon/abc/zip';
 import type jsZipType from 'jszip';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -6,7 +7,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 @Component({
   selector: 'app-zip',
   templateUrl: './zip.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: SHARED_IMPORTS
 })
 export class ZipComponent implements OnInit {
   private readonly zip = inject(ZipService);
@@ -63,7 +65,7 @@ export class ZipComponent implements OnInit {
           this.data = [];
         });
       },
-      (error: {}) => {
+      (error: unknown) => {
         console.warn(error);
         this.msg.error(JSON.stringify(error));
       }

@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, booleanAttribute, inject, Inject, OnInit, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, booleanAttribute, inject, OnInit, OnDestroy } from '@angular/core';
 import { I18NService } from '@core';
 import { YUNZAI_I18N_TOKEN, I18nPipe, SettingsService, YunzaiI18NType } from '@yelon/theme';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
@@ -34,7 +34,6 @@ import { Subject, takeUntil } from 'rxjs';
     '[class.flex-1]': 'true'
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [I18nPipe, NzDropDownModule, NzIconModule, NzMenuModule]
 })
 export class HeaderI18nComponent implements OnInit, OnDestroy {

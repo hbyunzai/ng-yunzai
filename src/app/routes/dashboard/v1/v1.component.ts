@@ -16,7 +16,6 @@ import { timer } from 'rxjs';
   selector: 'app-dashboard-v1',
   templateUrl: './v1.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [...SHARED_IMPORTS, G2TimelineModule, G2BarModule, G2MiniBarModule, QuickMenuModule, OnboardingModule]
 })
 export class DashboardV1Component implements OnInit {
@@ -41,7 +40,7 @@ export class DashboardV1Component implements OnInit {
     {
       completed: false,
       avatar: '3',
-      name: 'yunzai-bot',
+      name: 'cipchk',
       content: `this world was never meant for one as beautiful as you.`
     },
     {

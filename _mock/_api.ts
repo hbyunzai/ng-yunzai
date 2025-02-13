@@ -32,7 +32,7 @@ const user = ['yunzai-bot', 'yunzai-bot', '付小小', '曲丽丽', '林东东',
 
 // endregion
 
-function getFakeList(count: number = 20): any[] {
+function getFakeList(count = 20): any[] {
   const list: any[] = [];
   for (let i = 0; i < count; i += 1) {
     list.push({

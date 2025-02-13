@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { CountDownModule } from '@yelon/abc/count-down';
 import { G2GaugeModule } from '@yelon/chart/gauge';
 import { G2MiniAreaModule } from '@yelon/chart/mini-area';
@@ -7,7 +8,6 @@ import { G2PieModule } from '@yelon/chart/pie';
 import { G2TagCloudModule } from '@yelon/chart/tag-cloud';
 import { G2WaterWaveModule } from '@yelon/chart/water-wave';
 import { _HttpClient } from '@yelon/theme';
-import { SHARED_IMPORTS } from '@shared';
 import type { CountdownConfig } from 'ngx-countdown';
 import { zip } from 'rxjs';
 
@@ -16,7 +16,6 @@ import { zip } from 'rxjs';
   templateUrl: './monitor.component.html',
   styleUrls: ['./monitor.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [
     ...SHARED_IMPORTS,
     G2WaterWaveModule,

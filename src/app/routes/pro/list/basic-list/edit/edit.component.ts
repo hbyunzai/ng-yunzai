@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { SFSchema } from '@yelon/form';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-basic-list-edit',
-  templateUrl: './edit.component.html'
+  templateUrl: './edit.component.html',
+  imports: SHARED_IMPORTS
 })
 export class ProBasicListEditComponent {
   private readonly modal = inject(NzModalRef);
@@ -21,8 +23,8 @@ export class ProBasicListEditComponent {
         title: '任务负责人',
         enum: [
           { value: 'asdf', label: 'asdf' },
-          { value: 'yunzai-bot', label: 'yunzai-bot' },
-          { value: 'yunzai-bot', label: 'yunzai-bot' }
+          { value: '卡色', label: '卡色' },
+          { value: 'cipchk', label: 'cipchk' }
         ]
       },
       subDescription: {

@@ -1,4 +1,5 @@
 import { Component, ViewChild, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { STColumn, STComponent } from '@yelon/abc/st';
 import { ModalHelper } from '@yelon/theme';
 import { NzMessageService } from 'ng-zorro-antd/message';
@@ -7,7 +8,8 @@ import { ExtrasPoiEditComponent } from './edit/edit.component';
 
 @Component({
   selector: 'app-extras-poi',
-  templateUrl: './poi.component.html'
+  templateUrl: './poi.component.html',
+  imports: SHARED_IMPORTS
 })
 export class ExtrasPoiComponent {
   private readonly msg = inject(NzMessageService);

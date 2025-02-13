@@ -1,14 +1,13 @@
 import { Component, ElementRef, OnInit, Renderer2, inject } from '@angular/core';
 import { NavigationEnd, NavigationError, RouteConfigLoadStart, Router, RouterOutlet } from '@angular/router';
-import { TitleService, VERSION as VERSION_YUNZAI, stepPreloader } from '@yelon/theme';
 import { environment } from '@env/environment';
+import { TitleService, VERSION as VERSION_YUNZAI, stepPreloader } from '@yelon/theme';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { VERSION as VERSION_ZORRO } from 'ng-zorro-antd/version';
 
 @Component({
   selector: 'app-root',
-  template: ` <router-outlet />`,
-  standalone: true,
+  template: `<router-outlet />`,
   imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {

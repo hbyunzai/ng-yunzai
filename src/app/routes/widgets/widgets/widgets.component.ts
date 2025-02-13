@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { G2MiniAreaModule } from '@yelon/chart/mini-area';
 import { G2MiniBarData, G2MiniBarModule } from '@yelon/chart/mini-bar';
 import { _HttpClient } from '@yelon/theme';
-import { SHARED_IMPORTS } from '@shared';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzMessageService } from 'ng-zorro-antd/message';
 
@@ -11,7 +11,6 @@ import { NzMessageService } from 'ng-zorro-antd/message';
   templateUrl: './widgets.component.html',
   styleUrls: ['./widgets.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  standalone: true,
   imports: [...SHARED_IMPORTS, NzCarouselModule, G2MiniBarModule, G2MiniAreaModule]
 })
 export class WidgetsComponent implements OnInit {
@@ -37,7 +36,7 @@ export class WidgetsComponent implements OnInit {
     {
       completed: false,
       avatar: '3',
-      name: 'yunzai-bot',
+      name: 'cipchk',
       content: `this world was never meant for one as beautiful as you.`
     },
     {

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { ActivationEnd, Router } from '@angular/router';
+import { SHARED_IMPORTS } from '@shared';
 import { _HttpClient } from '@yelon/theme';
 import { Subscription, zip, filter } from 'rxjs';
 
@@ -7,7 +8,8 @@ import { Subscription, zip, filter } from 'rxjs';
   selector: 'app-account-center',
   templateUrl: './center.component.html',
   styleUrls: ['./center.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: SHARED_IMPORTS
 })
 export class ProAccountCenterComponent implements OnInit, OnDestroy {
   private readonly router = inject(Router);

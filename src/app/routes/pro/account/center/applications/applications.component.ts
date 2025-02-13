@@ -1,4 +1,6 @@
+import { DecimalPipe } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
+import { SHARED_IMPORTS } from '@shared';
 import { _HttpClient } from '@yelon/theme';
 import { NzSafeAny } from 'ng-zorro-antd/core/types';
 
@@ -6,7 +8,8 @@ import { NzSafeAny } from 'ng-zorro-antd/core/types';
   selector: 'app-account-center-applications',
   templateUrl: './applications.component.html',
   styleUrls: ['./applications.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [...SHARED_IMPORTS, DecimalPipe]
 })
 export class ProAccountCenterApplicationsComponent {
   private readonly http = inject(_HttpClient);

@@ -13,7 +13,7 @@ const DEFAULT = 'zh-CN';
 @Injectable({ providedIn: 'root' })
 export class I18NService extends YunzaiI18nBaseService {
   protected override _defaultLang = DEFAULT;
-  private destroy$: Subject<any> = new Subject();
+  private destroy$ = new Subject<any>();
 
   constructor(
     private http: _HttpClient,
