@@ -31,8 +31,8 @@ jobs:
         run: |
           export DEPLOY_DOMAIN=https://preview-${{ github.event.number }}-ng-yunzai.surge.sh
           echo "Deploy to $DEPLOY_DOMAIN"
-          cp ./dist/browser/index.html ./dist/browser/404.html
-          npx surge --project ./dist/browser --domain $DEPLOY_DOMAIN
+          cp ./dist/ng-yunzai/browser/index.html ./dist/ng-yunzai/browser/404.html
+          npx surge --project ./dist/ng-yunzai/browser --domain $DEPLOY_DOMAIN
         env:
           ACCESS_REPO: ${{ github.repository }}
           ACCESS_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
@@ -78,8 +78,8 @@ jobs:
         run: |
           export DEPLOY_DOMAIN=https://preview-${{ github.event.number }}-day-ng-yunzai.surge.sh
           echo "Deploy to $DEPLOY_DOMAIN"
-          cp ./dist/browser/index.html ./dist/browser/404.html
-          npx surge --project ./dist/browser --domain $DEPLOY_DOMAIN
+          cp ./dist/ng-yunzai/browser/index.html ./dist/ng-yunzai/browser/404.html
+          npx surge --project ./dist/ng-yunzai/browser --domain $DEPLOY_DOMAIN
         env:
           ACCESS_REPO: ${{ github.repository }}
           ACCESS_TOKEN: ${{ secrets.PERSONAL_TOKEN }}

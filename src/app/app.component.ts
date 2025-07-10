@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavigationEnd, NavigationError, RouteConfigLoadStart, Router, RouterOutlet } from '@angular/router';
 import { environment } from '@env/environment';
 import { TitleService, VERSION as VERSION_YUNZAI, stepPreloader } from '@yelon/theme';
@@ -8,19 +8,20 @@ import { VERSION as VERSION_ZORRO } from 'ng-zorro-antd/version';
 @Component({
   selector: 'app-root',
   template: `<router-outlet />`,
-  imports: [RouterOutlet]
+  imports: [RouterOutlet],
+  host: {
+    '[attr.ng-yunzai-version]': 'ngYunzaiVersion',
+    '[attr.ng-zorro-version]': 'ngZorroVersion'
+  }
 })
 export class AppComponent implements OnInit {
   private readonly router = inject(Router);
   private readonly titleSrv = inject(TitleService);
   private readonly modalSrv = inject(NzModalService);
+  ngYunzaiVersion = VERSION_YUNZAI.full;
+  ngZorroVersion = VERSION_ZORRO.full;
 
   private donePreloader = stepPreloader();
-
-  constructor(el: ElementRef, renderer: Renderer2) {
-    renderer.setAttribute(el.nativeElement, 'ng-yunzai-version', VERSION_YUNZAI.full);
-    renderer.setAttribute(el.nativeElement, 'ng-zorro-version', VERSION_ZORRO.full);
-  }
 
   ngOnInit(): void {
     let configLoad = false;

@@ -1,11 +1,9 @@
-import { DOCUMENT } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, booleanAttribute, inject, OnInit, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, booleanAttribute, inject, DOCUMENT } from '@angular/core';
 import { I18NService } from '@core';
-import { YUNZAI_I18N_TOKEN, I18nPipe, SettingsService, YunzaiI18NType } from '@yelon/theme';
+import { YUNZAI_I18N_TOKEN, I18nPipe, SettingsService } from '@yelon/theme';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'header-i18n',
@@ -36,23 +34,15 @@ import { Subject, takeUntil } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [I18nPipe, NzDropDownModule, NzIconModule, NzMenuModule]
 })
-export class HeaderI18nComponent implements OnInit, OnDestroy {
+export class HeaderI18nComponent {
   private readonly settings = inject(SettingsService);
   private readonly i18n = inject<I18NService>(YUNZAI_I18N_TOKEN);
   private readonly doc = inject(DOCUMENT);
-  langs: YunzaiI18NType[] = [];
-  private destroy$: Subject<any> = new Subject<any>();
   /** Whether to display language text */
   @Input({ transform: booleanAttribute }) showLangText = true;
 
-  ngOnInit(): void {
-    this.i18n
-      .getLangs()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(langs => (this.langs = langs));
-  }
-  ngOnDestroy(): void {
-    this.destroy$.complete();
+  get langs(): Array<{ code: string; text: string; abbr: string }> {
+    return this.i18n.getLangs();
   }
 
   get curLangCode(): string {

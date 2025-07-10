@@ -57,6 +57,6 @@ fi
 
 cp -rf ${ROOT_DIR}/CNAME ${DIST_DIR}/browser/CNAME
 
-cp -f ${DIST_DIR}/browser/index.html ${DIST_DIR}/browser/404.html
+cp -f ${DIST_DIR}/ng-yunzai/browser/index.html ${DIST_DIR}/ng-yunzai/browser/404.html
 
 echo "Finished"
