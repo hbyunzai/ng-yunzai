@@ -3,8 +3,28 @@
   "theme": {
     "list": [
       {
-        "key": "dark"
-      },
+        "theme": "dark",
+        "modifyVars": {
+          "@primary-color": "#141414",
+          "@yunzai-default-header-bg": "#141414",
+          "@yunzai-default-aside-nav-text-hover-color": "#141414",
+          "@yunzai-default-aside-nav-selected-text-color": "#141414",
+          "@yz-application-bgColor": "#FFF",
+          "@yz-application-border-shadow": "#888",
+          "@yz-application-topic-bgColor": "#000000",
+          "@yz-application-topic-text-color": "#FFF",
+          "@yz-application-topic-text-hover-bgColor": "#FFF",
+          "@yz-application-topic-text-hover-color": "#141414",
+          "@yz-application-list-ul-h5-color": "#000",
+          "@yz-application-list-ul-a-color": "#000",
+          "@yz-application-list-ul-a-hover-color": "#FFF",
+          "@yz-application-list-ul-a-hover-bgColor": "#141414",
+          "@yz-application-list-item-h4p-color": "#000",
+          "@yz-application-list-item-p-color": "#000",
+          "@yz-application-list-item-li-hover-color": "#FFF",
+          "@yz-application-list-item-li-hover-bgColor": "#141414"
+        }
+      }, 
       {
         "key": "compact"
       },
